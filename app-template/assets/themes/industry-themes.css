@@ -60,6 +60,11 @@
   --physiotherapy-primary: #1a2b3c;
   --physiotherapy-accent: #89a894;
   --physiotherapy-secondary: #e9ecef;
+
+  --yoga-bg: #f5f1e9;
+  --yoga-primary: #5d6d4f;
+  --yoga-accent: #a65d43;
+  --yoga-secondary: #e0d8c3;
 }
 
 /* Restaurant Theme */
@@ -236,4 +241,22 @@
 [data-theme="physiotherapy"][data-variant="alt2"] {
   --bg-color: #f0fff0;
   --accent-color: #4682b4;
+}
+
+/* Yoga Theme */
+[data-theme="yoga"] {
+  --bg-color: var(--yoga-bg);
+  --primary-color: var(--yoga-primary);
+  --accent-color: var(--yoga-accent);
+  --secondary-color: var(--yoga-secondary);
+}
+[data-theme="yoga"][data-variant="alt1"] {
+  --bg-color: #ffffff;
+  --primary-color: #2c3e50;
+  --accent-color: #7fb3d5;
+}
+[data-theme="yoga"][data-variant="alt2"] {
+  --bg-color: #2d3436;
+  --primary-color: #dfe6e9;
+  --accent-color: #fab1a0;
 }

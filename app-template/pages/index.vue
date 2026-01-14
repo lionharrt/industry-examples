@@ -24,5 +24,6 @@ const industries = [
   { name: 'Automotive', path: '/automotive' },
   { name: 'Creative', path: '/creative' },
   { name: 'Physiotherapy', path: '/physiotherapy' },
+  { name: 'Yoga', path: '/yoga' },
 ]
 </script>

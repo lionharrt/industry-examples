@@ -11,6 +11,7 @@ import { hotelData } from '~/data/industries/hotel'
 import { automotiveData } from '~/data/industries/automotive'
 import { creativeData } from '~/data/industries/creative'
 import { physiotherapyData } from '~/data/industries/physiotherapy'
+import { yogaData } from '~/data/industries/yoga'
 
 export const useNavBarData = () => {
   const route = useRoute()
@@ -26,7 +27,8 @@ export const useNavBarData = () => {
     '/hotel': hotelData,
     '/automotive': automotiveData,
     '/creative': creativeData,
-    '/physiotherapy': physiotherapyData
+    '/physiotherapy': physiotherapyData,
+    '/yoga': yogaData
   }
 
   const currentData = computed(() => industryDataMap[route.path] || null)

@@ -103,6 +103,7 @@ const currentIndustry = computed({
 })
 
 const industries = [
+  { name: 'Yoga', path: '/yoga' },
   { name: 'Physiotherapy', path: '/physiotherapy' },
   { name: 'Restaurant', path: '/restaurant' },
   { name: 'Real Estate', path: '/realestate' },
@@ -120,6 +121,9 @@ const sections = computed(() => {
   const base = ['Hero', 'About', 'Services', 'Portfolio', 'Testimonials', 'Team', 'Pricing', 'Contact', 'Footer']
   if (route.path === '/physiotherapy') {
     return [...base, 'Blog', 'BMI']
+  }
+  if (route.path === '/yoga') {
+    return [...base, 'Blog']
   }
   return base
 })
