@@ -1,0 +1,239 @@
+:root {
+  /* Base Colors */
+  --bg-color: #ffffff;
+  --primary-color: #000000;
+  --accent-color: #888888;
+  --secondary-color: #aaaaaa;
+
+  /* Industry Specific Variables - Default Variants */
+  --restaurant-bg: #1a1a1a;
+  --restaurant-primary: #ffffff;
+  --restaurant-accent: #d4af37;
+  --restaurant-secondary: #a0522d;
+
+  --realestate-bg: #000080;
+  --realestate-primary: #ffffff;
+  --realestate-accent: #f7e7ce;
+  --realestate-secondary: #708090;
+
+  --fashion-bg: #000000;
+  --fashion-primary: #ffffff;
+  --fashion-accent: #dc143c;
+  --fashion-secondary: #333333;
+
+  --creative-bg: #111111;
+  --creative-primary: #ffffff;
+  --creative-accent: #ff5f1f;
+  --creative-secondary: #b0bf1a;
+
+  --tech-bg: #0b0e14;
+  --tech-primary: #ffffff;
+  --tech-accent: #6a0dad;
+  --tech-secondary: #008080;
+
+  --architecture-bg: #faf9f6;
+  --architecture-primary: #28282b;
+  --architecture-accent: #a9a9a9;
+  --architecture-secondary: #d3d3d3;
+
+  --hotel-bg: #c2b280;
+  --hotel-primary: #3b2f2f;
+  --hotel-accent: #e2725b;
+  --hotel-secondary: #8b4513;
+
+  --fitness-bg: #121212;
+  --fitness-primary: #ffffff;
+  --fitness-accent: #ccff00;
+  --fitness-secondary: #333333;
+
+  --legal-bg: #001f3f;
+  --legal-primary: #ffffff;
+  --legal-accent: #c5a059;
+  --legal-secondary: #e1e1e1;
+
+  --automotive-bg: #333333;
+  --automotive-primary: #ffffff;
+  --automotive-accent: #ff0000;
+  --automotive-secondary: #1a1a1a;
+
+  --physiotherapy-bg: #f8f9fa;
+  --physiotherapy-primary: #1a2b3c;
+  --physiotherapy-accent: #89a894;
+  --physiotherapy-secondary: #e9ecef;
+}
+
+/* Restaurant Theme */
+[data-theme="restaurant"] {
+  --bg-color: var(--restaurant-bg);
+  --primary-color: var(--restaurant-primary);
+  --accent-color: var(--restaurant-accent);
+  --secondary-color: var(--restaurant-secondary);
+}
+[data-theme="restaurant"][data-variant="alt1"] {
+  --bg-color: #2d1a1a;
+  --accent-color: #e2725b;
+}
+[data-theme="restaurant"][data-variant="alt2"] {
+  --bg-color: #1a2d1a;
+  --accent-color: #8fbc8f;
+}
+
+/* Real Estate Theme */
+[data-theme="realestate"] {
+  --bg-color: var(--realestate-bg);
+  --primary-color: var(--realestate-primary);
+  --accent-color: var(--realestate-accent);
+  --secondary-color: var(--realestate-secondary);
+}
+[data-theme="realestate"][data-variant="alt1"] {
+  --bg-color: #000040;
+  --accent-color: #ffd700;
+}
+[data-theme="realestate"][data-variant="alt2"] {
+  --bg-color: #002040;
+  --accent-color: #c0c0c0;
+}
+
+/* Fashion Theme */
+[data-theme="fashion"] {
+  --bg-color: var(--fashion-bg);
+  --primary-color: var(--fashion-primary);
+  --accent-color: var(--fashion-accent);
+  --secondary-color: var(--fashion-secondary);
+}
+[data-theme="fashion"][data-variant="alt1"] {
+  --bg-color: #1a1a1a;
+  --accent-color: #0033ff;
+}
+[data-theme="fashion"][data-variant="alt2"] {
+  --bg-color: #0a0a0a;
+  --accent-color: #ffffff;
+}
+
+/* Creative Theme */
+[data-theme="creative"] {
+  --bg-color: var(--creative-bg);
+  --primary-color: var(--creative-primary);
+  --accent-color: var(--creative-accent);
+  --secondary-color: var(--creative-secondary);
+}
+[data-theme="creative"][data-variant="alt1"] {
+  --bg-color: #000000;
+  --accent-color: #00ff00;
+}
+[data-theme="creative"][data-variant="alt2"] {
+  --bg-color: #1a1a1a;
+  --accent-color: #ff00ff;
+}
+
+/* Tech Theme */
+[data-theme="tech"] {
+  --bg-color: var(--tech-bg);
+  --primary-color: var(--tech-primary);
+  --accent-color: var(--tech-accent);
+  --secondary-color: var(--tech-secondary);
+}
+[data-theme="tech"][data-variant="alt1"] {
+  --bg-color: #05070a;
+  --accent-color: #00ffff;
+}
+[data-theme="tech"][data-variant="alt2"] {
+  --bg-color: #14171f;
+  --accent-color: #ffd700;
+}
+
+/* Architecture Theme */
+[data-theme="architecture"] {
+  --bg-color: var(--architecture-bg);
+  --primary-color: var(--architecture-primary);
+  --accent-color: var(--architecture-accent);
+  --secondary-color: var(--architecture-secondary);
+}
+[data-theme="architecture"][data-variant="alt1"] {
+  --bg-color: #e5e4e2;
+  --primary-color: #000000;
+}
+[data-theme="architecture"][data-variant="alt2"] {
+  --bg-color: #f0f8ff;
+  --primary-color: #191970;
+}
+
+/* Hotel Theme */
+[data-theme="hotel"] {
+  --bg-color: var(--hotel-bg);
+  --primary-color: var(--hotel-primary);
+  --accent-color: var(--hotel-accent);
+  --secondary-color: var(--hotel-secondary);
+}
+[data-theme="hotel"][data-variant="alt1"] {
+  --bg-color: #f5f5dc;
+  --accent-color: #4682b4;
+}
+[data-theme="hotel"][data-variant="alt2"] {
+  --bg-color: #fff0f5;
+  --accent-color: #db7093;
+}
+
+/* Fitness Theme */
+[data-theme="fitness"] {
+  --bg-color: var(--fitness-bg);
+  --primary-color: var(--fitness-primary);
+  --accent-color: var(--fitness-accent);
+  --secondary-color: var(--fitness-secondary);
+}
+[data-theme="fitness"][data-variant="alt1"] {
+  --bg-color: #000000;
+  --accent-color: #ff4500;
+}
+[data-theme="fitness"][data-variant="alt2"] {
+  --bg-color: #1a1a1a;
+  --accent-color: #00ff7f;
+}
+
+/* Legal Theme */
+[data-theme="legal"] {
+  --bg-color: var(--legal-bg);
+  --primary-color: var(--legal-primary);
+  --accent-color: var(--legal-accent);
+  --secondary-color: var(--legal-secondary);
+}
+[data-theme="legal"][data-variant="alt1"] {
+  --bg-color: #f0ead6;
+  --primary-color: #000080;
+}
+[data-theme="legal"][data-variant="alt2"] {
+  --bg-color: #ffffff;
+  --primary-color: #2f4f4f;
+}
+
+/* Automotive Theme */
+[data-theme="automotive"] {
+  --bg-color: var(--automotive-bg);
+  --primary-color: var(--automotive-primary);
+  --accent-color: var(--automotive-accent);
+  --secondary-color: var(--automotive-secondary);
+}
+[data-theme="automotive"][data-variant="alt1"] {
+  --bg-color: #1a1a1a;
+  --accent-color: #ffd700;
+}
+[data-theme="automotive"][data-variant="alt2"] {
+  --bg-color: #000000;
+  --accent-color: #0000ff;
+}
+
+/* Physiotherapy Theme */
+[data-theme="physiotherapy"] {
+  --bg-color: var(--physiotherapy-bg);
+  --primary-color: var(--physiotherapy-primary);
+  --accent-color: var(--physiotherapy-accent);
+  --secondary-color: var(--physiotherapy-secondary);
+}
+[data-theme="physiotherapy"][data-variant="alt1"] {
+  --bg-color: #ffffff;
+  --accent-color: #5f9ea0;
+}
+[data-theme="physiotherapy"][data-variant="alt2"] {
+  --bg-color: #f0fff0;
+  --accent-color: #4682b4;
+}

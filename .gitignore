@@ -1,0 +1,20 @@
+# Nuxt
+app-template/.nuxt
+app-template/.output
+app-template/dist
+app-template/node_modules
+app-template/.firebase
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Media (Large Files)
+media/*.mp4
