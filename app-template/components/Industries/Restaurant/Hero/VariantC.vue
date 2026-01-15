@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-screen relative flex items-center justify-center overflow-hidden bg-black"
+    class="h-screen relative flex items-center justify-center overflow-hidden bg-black px-6"
   >
     <!-- Full-screen atmospheric video -->
     <div class="absolute inset-0 z-0 opacity-40">
@@ -27,14 +27,14 @@
       <div ref="revealContainer" class="overflow-hidden">
         <h1
           ref="titleRef"
-          class="text-[15vw] font-serif font-black italic uppercase text-[#D4AF37] leading-none translate-y-full"
+          class="text-6xl sm:text-8xl md:text-[15vw] font-serif font-black italic uppercase text-[#D4AF37] leading-none translate-y-full"
         >
           {{ title }}
         </h1>
       </div>
       <p
         ref="subtitleRef"
-        class="text-white text-xs uppercase tracking-[1em] mt-12 font-bold opacity-0"
+        class="text-white text-[10px] md:text-xs uppercase tracking-[0.5em] md:tracking-[1em] mt-8 md:mt-12 font-bold opacity-0"
       >
         {{ subtitle }}
       </p>

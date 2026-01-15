@@ -1,10 +1,10 @@
 <template>
-  <section class="py-24 bg-white">
+  <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-1">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
         <div v-for="(service, index) in services" :key="service.name" 
-             class="group relative h-[400px] overflow-hidden bg-primary service-item opacity-0"
-             :class="{ 'lg:col-span-2': index === 2 }"
+             class="group relative h-[300px] sm:h-[400px] overflow-hidden bg-primary service-item opacity-0"
+             :class="{ 'md:col-span-2': index === 2 }"
         >
           <!-- Background Image (Visible on Hover) -->
           <div class="absolute inset-0 z-0">
@@ -14,15 +14,15 @@
             >
           </div>
           
-          <div class="relative z-10 p-12 h-full flex flex-col justify-end">
-            <span class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-4">Service 0{{ index + 1 }}</span>
-            <h3 class="text-4xl font-serif text-white mb-6">{{ service.name }}</h3>
-            <p class="text-white/40 max-w-md group-hover:text-white transition-colors duration-500">
+          <div class="relative z-10 p-8 sm:p-12 h-full flex flex-col justify-end">
+            <span class="text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-3 md:mb-4">Service 0{{ index + 1 }}</span>
+            <h3 class="text-2xl md:text-4xl font-serif text-white mb-4 md:mb-6">{{ service.name }}</h3>
+            <p class="text-white/40 text-sm md:text-base max-w-md group-hover:text-white transition-colors duration-500 line-clamp-2 sm:line-clamp-none">
               {{ service.description }}
             </p>
-            <div class="mt-8 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-              <button class="text-accent font-bold uppercase tracking-widest text-xs flex items-center gap-2">
-                Discover More <span class="text-xl">→</span>
+            <div class="mt-6 md:mt-8 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <button class="text-accent font-bold uppercase tracking-widest text-[10px] md:text-xs flex items-center gap-2">
+                Discover More <span class="text-lg md:text-xl">→</span>
               </button>
             </div>
           </div>
@@ -45,7 +45,7 @@ onMounted(() => {
   gsap.to('.service-item', {
     scrollTrigger: {
       trigger: '.service-item',
-      start: 'top 80%',
+      start: 'top 85%',
     },
     opacity: 1,
     duration: 1.5,

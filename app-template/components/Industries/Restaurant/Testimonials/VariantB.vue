@@ -1,16 +1,16 @@
 <template>
-  <section class="py-48 bg-black text-white px-6 md:px-24 overflow-hidden relative">
-    <div class="absolute -left-12 top-0 text-[40vw] font-serif font-black italic text-white/5 pointer-events-none select-none">
+  <section class="py-16 md:py-48 bg-black text-white px-6 md:px-24 overflow-hidden relative">
+    <div class="absolute -left-12 top-0 text-[40vw] font-serif font-black italic text-white/5 pointer-events-none select-none hidden md:block">
       Words
     </div>
     
-    <div ref="slider" class="flex gap-24 whitespace-nowrap">
-      <div v-for="(t, idx) in [...testimonials, ...testimonials]" :key="idx" class="flex items-center gap-12">
-        <div class="w-px h-24 bg-[#D4AF37]"></div>
-        <p class="text-4xl md:text-5xl font-serif italic text-white/20 hover:text-white transition-colors cursor-default">
+    <div ref="slider" class="flex gap-8 md:gap-24 whitespace-nowrap">
+      <div v-for="(t, idx) in [...testimonials, ...testimonials]" :key="idx" class="flex items-center gap-6 md:gap-12">
+        <div class="w-px h-12 md:h-24 bg-[#D4AF37]"></div>
+        <p class="text-xl sm:text-2xl md:text-5xl font-serif italic text-white/20 hover:text-white transition-colors cursor-default">
           {{ t.quote }}
         </p>
-        <span class="text-xs font-black uppercase tracking-widest opacity-40">— {{ t.author }}</span>
+        <span class="text-[9px] md:text-xs font-black uppercase tracking-widest opacity-40">— {{ t.author }}</span>
       </div>
     </div>
   </section>

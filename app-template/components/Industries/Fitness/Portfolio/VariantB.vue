@@ -1,19 +1,20 @@
 <template>
-  <section class="py-48 bg-white text-black px-12 md:px-24 overflow-hidden relative">
-    <div class="absolute top-0 right-0 p-12 text-[15vw] font-black italic opacity-[0.03] pointer-events-none select-none uppercase">KINETIC</div>
+  <section class="py-16 md:py-48 bg-white text-black px-6 md:px-24 overflow-hidden relative">
+    <div class="absolute top-0 right-0 p-12 text-[15vw] font-black italic opacity-5 pointer-events-none select-none uppercase hidden md:block">KINETIC</div>
     
-    <div ref="track" class="flex gap-12 pb-12">
-      <div v-for="(item, idx) in items" :key="idx" class="min-w-[80vw] md:min-w-[40vw] h-[70vh] group relative overflow-hidden bg-black skew-x-[-5deg]">
-        <div class="absolute inset-0 skew-x-[5deg] scale-125">
-          <img :src="item.image + '?auto=format&fit=crop&w=1600'" class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" />
+    <div ref="track" class="flex gap-6 md:gap-12 pb-8 relative z-10">
+      <div v-for="(item, idx) in items" :key="idx" class="min-w-[85vw] sm:min-w-[70vw] md:min-w-[40vw] h-[50vh] md:h-[65vh] group relative overflow-hidden bg-black border-8 md:border-[16px] border-black shadow-[12px_12px_0_0_#CCFF00]">
+        <div class="absolute inset-0">
+          <img :src="item.image + '?auto=format&fit=crop&w=1600'" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-all"></div>
         </div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center p-12 text-center z-10 skew-x-[5deg]">
-          <h3 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-accent drop-shadow-2xl translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-            {{ item.title }}
-          </h3>
-          <div class="mt-8 px-8 py-2 bg-black text-primary font-black uppercase tracking-widest translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-100">
+        <div class="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-12 text-center z-10">
+          <div class="bg-accent text-black px-4 py-1 text-xs md:text-lg font-black italic uppercase mb-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
             LAB_0{{ idx + 1 }}
           </div>
+          <h3 class="text-3xl sm:text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white leading-none">
+            {{ item.title }}
+          </h3>
         </div>
       </div>
     </div>

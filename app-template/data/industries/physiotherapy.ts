@@ -65,7 +65,7 @@ export const physiotherapyData = {
         excerpt: 'Why rest is just as important as the rehabilitation exercises themselves.',
         category: 'Lifestyle',
         date: 'Jan 05, 2026',
-        image: 'https://images.unsplash.com/photo-1511293390234-a212356f9474'
+        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55'
       },
       { 
         title: 'Understanding Sports Injuries', 

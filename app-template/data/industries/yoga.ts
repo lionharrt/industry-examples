@@ -25,9 +25,9 @@ export const yogaData = {
     { name: 'Mindfulness Meditation', description: 'Guided sessions to cultivate awareness, reduce stress, and find clarity in the chaos.', icon: 'Sun' }
   ],
   portfolio: [
-    { title: 'The Garden Room', image: 'https://images.unsplash.com/photo-1545208393-2160281b8f55' },
-    { title: 'Sunset Deck', image: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5' },
-    { title: 'Meditation Nook', image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773' }
+    { title: 'The Garden Room', image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597' },
+    { title: 'Sunset Deck', image: 'https://images.unsplash.com/photo-1603988363607-e1e4a66962c6' },
+    { title: 'Meditation Nook', image: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3' }
   ],
   testimonials: [
     { quote: 'Zen Flow isn\'t just a yoga studio; it\'s where I found myself again. The atmosphere is pure magic.', author: 'Elena Rose', role: 'Daily Practitioner' },

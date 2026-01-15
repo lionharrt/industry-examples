@@ -1,7 +1,7 @@
 <template>
   <div 
     v-show="isVisible"
-    class="fixed bottom-8 right-8 z-[100] w-80 bg-black/95 backdrop-blur-2xl border border-white/10 p-6 rounded-3xl shadow-2xl text-white"
+    class="fixed bottom-0 md:bottom-8 right-0 md:right-8 z-[100] w-full md:w-80 h-[70vh] md:h-auto bg-black/95 backdrop-blur-2xl border-t md:border border-white/10 p-6 md:rounded-3xl shadow-2xl text-white overflow-hidden flex flex-col"
   >
     <div class="flex items-center justify-between mb-8">
       <div class="flex flex-col">
@@ -80,9 +80,10 @@
   <button 
     v-if="!isVisible"
     @click="isVisible = true"
-    class="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-2xl hover:rotate-90 duration-500"
+    class="fixed bottom-6 md:bottom-8 right-6 md:right-8 z-[100] w-12 md:w-14 h-12 md:h-14 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-2xl hover:rotate-90 duration-500"
   >
-    <Settings :size="24" />
+    <Settings :size="20" class="md:hidden" />
+    <Settings :size="24" class="hidden md:block" />
   </button>
 </template>
 

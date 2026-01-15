@@ -1,5 +1,5 @@
 <template>
-  <section class="py-32 bg-primary text-white relative overflow-hidden">
+  <section class="py-20 md:py-32 bg-primary text-white relative overflow-hidden px-6">
     <!-- Geometric Background Pattern -->
     <div class="absolute inset-0 opacity-10">
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -12,23 +12,23 @@
       </svg>
     </div>
 
-    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-12">
+    <div class="max-w-4xl mx-auto relative z-10 text-center space-y-8 md:space-y-12">
       <div class="flex justify-center">
-        <div class="w-1 h-20 bg-accent animate-pulse"></div>
+        <div class="w-[1px] h-16 md:h-20 bg-accent animate-pulse"></div>
       </div>
       
-      <h2 class="text-3xl md:text-5xl font-light leading-tight about-h2 opacity-0">
+      <h2 class="text-2xl sm:text-3xl md:text-5xl font-light leading-tight about-h2 opacity-0">
         {{ title }}
       </h2>
       
-      <p class="text-xl md:text-2xl text-white/60 font-light leading-relaxed about-p opacity-0">
+      <p class="text-lg md:text-2xl text-white/60 font-light leading-relaxed about-p opacity-0">
         {{ content }}
       </p>
 
-      <div class="flex flex-wrap justify-center gap-12 pt-12 about-stats opacity-0">
-        <div v-for="stat in stats" :key="stat.label" class="text-center">
-          <div class="text-5xl font-light mb-2 text-accent">{{ stat.value }}</div>
-          <div class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">{{ stat.label }}</div>
+      <div class="flex flex-wrap justify-center gap-8 md:gap-12 pt-8 md:pt-12 about-stats opacity-0">
+        <div v-for="stat in stats" :key="stat.label" class="text-center min-w-[120px]">
+          <div class="text-4xl md:text-5xl font-light mb-2 text-accent">{{ stat.value }}</div>
+          <div class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">{{ stat.label }}</div>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.about-h2',
-      start: 'top 80%',
+      start: 'top 85%',
     }
   })
   

@@ -56,7 +56,7 @@ export const restaurantData = {
       quote: "The best dining experience of my life.",
       author: "Julian Slowik",
       role: "Food Critic",
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
     },
     {
       quote: "Fire, oak, and pure passion on every plate.",
@@ -69,7 +69,7 @@ export const restaurantData = {
     {
       name: "Chef Julian",
       role: "Executive Chef",
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90",
+      image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c",
     },
     {
       name: "Somesmith",

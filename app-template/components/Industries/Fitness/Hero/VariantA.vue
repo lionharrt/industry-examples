@@ -1,28 +1,30 @@
 <template>
-  <section class="relative h-screen w-full bg-[#1A1A1A] text-primary flex items-center justify-center overflow-hidden">
-    <!-- Kinetic Background Particles -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <div v-for="i in 20" :key="i" class="absolute h-[1px] bg-accent opacity-20" :style="{ width: Math.random() * 100 + '%', top: Math.random() * 100 + '%', left: '-50%', transform: 'rotate(-45deg)' }"></div>
+  <section class="relative min-h-screen w-full bg-black text-white flex items-center justify-center overflow-hidden py-16 md:py-0">
+    <!-- Sharp background pattern -->
+    <div class="absolute inset-0 z-0 overflow-hidden opacity-10">
+      <div v-for="i in 20" :key="i" class="absolute h-[1px] w-full bg-accent" :style="{ top: (i * 5) + '%' }"></div>
+      <div v-for="i in 20" :key="i" class="absolute w-[1px] h-full bg-accent" :style="{ left: (i * 5) + '%' }"></div>
     </div>
     
-    <div class="relative z-10 text-center space-y-8 max-w-7xl px-6">
+    <div class="relative z-10 text-center space-y-6 md:space-y-10 max-w-5xl px-6">
+      <div class="inline-block bg-accent text-black px-3 py-1 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-2">
+        EST. 2026 // KINETIC_FORCE
+      </div>
       <div class="overflow-hidden">
-        <h1 class="text-[15vw] font-black italic tracking-tighter leading-none text-accent uppercase hero-title opacity-0 translate-y-full">
-          {{ title }}
+        <h1 class="text-5xl sm:text-7xl md:text-9xl font-black italic tracking-tighter leading-[0.9] text-white uppercase hero-title opacity-0 translate-y-full">
+          {{ title?.split(' ')[0] }}<br/>
+          <span class="text-accent">{{ title?.split(' ').slice(1).join(' ') }}</span>
         </h1>
       </div>
-      <p class="text-2xl font-bold uppercase tracking-[0.5em] hero-subtitle opacity-0">
+      <p class="text-sm md:text-xl font-bold uppercase tracking-widest hero-subtitle opacity-0 text-white/80 max-w-xl mx-auto">
         {{ subtitle }}
       </p>
-      <div class="pt-12">
-        <button class="bg-accent text-black px-12 py-5 text-xl font-black uppercase italic tracking-widest hover:bg-white hover:scale-110 transition-all duration-300 hero-button opacity-0">
+      <div class="pt-6 md:pt-10">
+        <button class="bg-accent text-black px-8 md:px-12 py-4 md:py-5 text-sm md:text-lg font-black uppercase italic tracking-widest hover:bg-white transition-all duration-300 hero-button opacity-0 border-2 md:border-4 border-accent hover:border-white shadow-[4px_4px_0_0_#ffffff] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
           {{ cta }}
         </button>
       </div>
     </div>
-
-    <!-- Slanted decorative element -->
-    <div class="absolute bottom-0 right-0 w-1/2 h-32 bg-accent skew-x-[-45deg] translate-x-1/2 translate-y-1/2"></div>
   </section>
 </template>
 

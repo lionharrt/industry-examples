@@ -1,13 +1,13 @@
 <template>
-  <footer class="py-12 bg-accent text-black px-12 md:px-24 flex flex-col md:flex-row justify-between items-center border-t-8 border-black shadow-[0_-20px_100px_rgba(204,255,0,0.3)]">
-    <div class="flex items-center gap-8 mb-8 md:mb-0">
-      <div class="px-8 py-3 bg-black text-accent font-black text-xs tracking-[0.5em] uppercase italic skew-x-[-12deg]">
-        <span class="inline-block skew-x-[12deg]">KINETIC_OS_2.0</span>
+  <footer class="py-12 md:py-24 bg-black text-white px-6 md:px-24 flex flex-col md:flex-row justify-between items-center border-t-[16px] md:border-t-[32px] border-accent gap-12 md:gap-0">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+      <div class="px-8 md:px-16 py-4 md:py-6 bg-accent text-black font-black text-xl md:text-4xl tracking-tighter uppercase italic border-[8px] border-white">
+        KINETIC_OS_2.0
       </div>
-      <p class="text-[10px] font-black uppercase tracking-widest opacity-40 italic">{{ copyright }}</p>
+      <p class="text-xs md:text-2xl font-black uppercase tracking-widest text-accent italic">{{ copyright }}</p>
     </div>
-    <div class="flex gap-12">
-      <div v-for="social in ['_INSTA', '_PULSE', '_LOG']" :key="social" class="text-xl font-black italic hover:scale-125 transition-all cursor-pointer border-b-4 border-black hover:border-white/20 pb-1">
+    <div class="flex gap-8 md:gap-16">
+      <div v-for="social in ['_INSTA', '_PULSE', '_LOG']" :key="social" class="text-xl md:text-5xl font-black italic hover:text-accent transition-all cursor-pointer border-b-[8px] border-white hover:border-accent pb-2">
         {{ social }}
       </div>
     </div>

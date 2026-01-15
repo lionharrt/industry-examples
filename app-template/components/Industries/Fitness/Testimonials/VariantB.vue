@@ -1,13 +1,13 @@
 <template>
-  <section class="py-48 bg-accent text-black px-12 md:px-24">
-    <div ref="track" class="flex gap-24 whitespace-nowrap overflow-hidden py-24 border-y-8 border-black">
-      <div v-for="(t, idx) in [...testimonials, ...testimonials]" :key="idx" class="flex flex-col gap-8 group">
-        <p class="text-8xl font-black italic uppercase tracking-tighter group-hover:translate-x-12 transition-transform duration-700">
+  <section class="py-16 md:py-48 bg-white text-black px-6 md:px-24 border-y-[16px] md:border-y-[32px] border-black">
+    <div ref="track" class="flex gap-12 md:gap-32 whitespace-nowrap overflow-hidden py-12 md:py-24">
+      <div v-for="(t, idx) in [...testimonials, ...testimonials]" :key="idx" class="flex flex-col gap-8 md:gap-16 group bg-black text-accent p-8 md:p-16 border-[12px] md:border-[24px] border-black shadow-[15px_15px_0_0_#CCFF00]">
+        <p class="text-5xl sm:text-7xl md:text-[10vw] font-black italic uppercase tracking-tighter leading-none">
           "{{ t.quote }}"
         </p>
-        <div class="flex items-center gap-8">
-          <div class="h-2 w-24 bg-black group-hover:w-48 transition-all"></div>
-          <span class="text-2xl font-black italic uppercase tracking-widest">{{ t.author }} // {{ t.role }}</span>
+        <div class="flex items-center gap-8 md:gap-16">
+          <div class="h-4 md:h-8 w-24 md:w-48 bg-accent"></div>
+          <span class="text-xl md:text-5xl font-black italic uppercase tracking-tighter text-white">{{ t.author }} // {{ t.role }}</span>
         </div>
       </div>
     </div>
