@@ -1,22 +1,24 @@
 <template>
   <div class="automotive-page bg-[#0A0A0A]">
-    <component :is="heroComponent" v-bind="automotiveData.hero" />
-    <component :is="aboutComponent" v-bind="automotiveData.about" />
-    <component :is="servicesComponent" :services="automotiveData.services" />
-    <component :is="portfolioComponent" :items="automotiveData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="automotiveData.testimonials" />
-    <component :is="teamComponent" :team="automotiveData.team" />
-    <component :is="pricingComponent" :tiers="automotiveData.pricing" />
-    <component :is="contactComponent" v-bind="automotiveData.contact" />
-    <component :is="footerComponent" v-bind="automotiveData.footer" />
+    <component :is="heroComponent" v-bind="automotiveData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="automotiveData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="automotiveData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="automotiveData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="automotiveData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="automotiveData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="automotiveData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="automotiveData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="automotiveData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { automotiveData } from '~/data/industries/automotive'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Automotive Specific Variants
 import HeroA from '~/components/Industries/Automotive/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Automotive/Footer/VariantC.vue'
 
 useIndustryTheme('automotive')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

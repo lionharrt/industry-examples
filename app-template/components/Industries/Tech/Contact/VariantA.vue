@@ -6,16 +6,16 @@
         <div class="space-y-12">
           <div class="group cursor-pointer">
             <p class="text-[10px] font-black uppercase tracking-[0.5em] text-primary/20 mb-4">Direct Link</p>
-            <p class="text-4xl font-black uppercase tracking-tighter hover:text-secondary transition-colors">support@nexus.io</p>
+            <p class="text-xl md:text-2xl font-black uppercase tracking-tighter hover:text-secondary transition-colors">{{ email }}</p>
           </div>
           <div class="group cursor-pointer">
             <p class="text-[10px] font-black uppercase tracking-[0.5em] text-primary/20 mb-4">Secure Line</p>
-            <p class="text-4xl font-black uppercase tracking-tighter hover:text-secondary transition-colors">+1 800 NEXUS</p>
+            <p class="text-xl md:text-2xl font-black uppercase tracking-tighter hover:text-secondary transition-colors">{{ phone }}</p>
           </div>
         </div>
       </div>
       
-      <form class="space-y-8 bg-[#161B22] p-16 rounded-[3rem] border border-white/10">
+      <form class="space-y-8 bg-[#161B22] p-16 rounded-[3rem] border border-white/10" @submit.prevent>
         <div class="grid grid-cols-2 gap-8">
           <div class="space-y-4">
             <label class="text-[10px] font-black uppercase tracking-widest text-accent">User_ID</label>

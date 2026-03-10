@@ -14,7 +14,7 @@ export const restaurantData = {
     title: "OUR STORY",
     content:
       "Ember & Oak was born from a passion for the primal element of fire and the enduring strength of the oak tree. Our kitchen is centered around a custom-built wood-fire hearth, where we transform the finest local ingredients into unforgettable experiences.",
-    image: "1551731509-197cc24176c4",
+    image: "1517248135467-4c7edcad34c4",
     imageSecondary: "1414235077428-338989a2e8c0",
   },
   services: [
@@ -22,7 +22,7 @@ export const restaurantData = {
       title: "Tasting Menu",
       description: "A 12-course journey through the seasons.",
       icon: "ChefHat",
-      image: "1504675099196-321283086e14",
+      image: "1504674900247-0877df9cc836",
     },
     {
       title: "Private Dining",
@@ -34,12 +34,12 @@ export const restaurantData = {
       title: "Chef Table",
       description: "Front-row seats to the culinary action.",
       icon: "Utensils",
-      image: "1551218808-c8127ad5ba16",
+      image: "1559339352-11d035aa65de",
     },
   ],
   portfolio: [
     {
-      image: "1551218808-c8127ad5ba16",
+      image: "1559339352-11d035aa65de",
       title: "Oak Smoked Scallops",
     },
     {
@@ -47,7 +47,7 @@ export const restaurantData = {
       title: "Wine Cellar Collection",
     },
     {
-      image: "1504675099196-321283086e14",
+      image: "1504674900247-0877df9cc836",
       title: "Hearth-Fired Wagyu",
     },
   ],

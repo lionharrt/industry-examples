@@ -1,24 +1,26 @@
 <template>
   <div class="physiotherapy-page bg-background">
-    <component :is="heroComponent" v-bind="physiotherapyData.hero" />
-    <component :is="aboutComponent" v-bind="physiotherapyData.about" />
-    <component :is="servicesComponent" :services="physiotherapyData.services" />
-    <component :is="bmiComponent" v-bind="physiotherapyData.bmi" />
-    <component :is="portfolioComponent" :items="physiotherapyData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="physiotherapyData.testimonials" />
-    <component :is="blogComponent" v-bind="physiotherapyData.blog" />
-    <component :is="teamComponent" :team="physiotherapyData.team" />
-    <component :is="pricingComponent" :tiers="physiotherapyData.pricing" />
-    <component :is="contactComponent" v-bind="physiotherapyData.contact" />
-    <component :is="footerComponent" v-bind="physiotherapyData.footer" />
+    <component :is="heroComponent" v-bind="physiotherapyData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="physiotherapyData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="physiotherapyData.services" :key="`services-${config.services}`" />
+    <component :is="bmiComponent" v-bind="physiotherapyData.bmi" :key="`bmi-${config.bmi}`" />
+    <component :is="portfolioComponent" :items="physiotherapyData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="physiotherapyData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="blogComponent" v-bind="physiotherapyData.blog" :key="`blog-${config.blog}`" />
+    <component :is="teamComponent" :team="physiotherapyData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="physiotherapyData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="physiotherapyData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="physiotherapyData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { physiotherapyData } from '~/data/industries/physiotherapy'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Physiotherapy Specific Variants
 import HeroA from '~/components/Industries/Physiotherapy/Hero/VariantA.vue'
@@ -59,6 +61,14 @@ import BMIC from '~/components/Industries/Physiotherapy/BMI/VariantC.vue'
 
 useIndustryTheme('physiotherapy')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

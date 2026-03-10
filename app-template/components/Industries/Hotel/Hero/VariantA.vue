@@ -3,20 +3,20 @@
     <!-- Atmospheric overlay -->
     <div class="absolute inset-0 z-0 opacity-20 pointer-events-none bg-gradient-to-b from-accent/20 to-transparent"></div>
     
-    <div class="relative z-10 text-center space-y-12">
-      <div ref="timeRef" class="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.5em] opacity-40">
+    <div class="relative z-10 text-center space-y-8 md:space-y-12 px-8">
+      <div ref="timeRef" class="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] opacity-40 justify-center">
         <span>Amalfi Coast</span>
         <div class="w-1 h-1 bg-primary rounded-full"></div>
         <span>18:42</span>
       </div>
-      <h1 ref="titleRef" class="text-[12vw] font-serif italic leading-none tracking-tighter shadow-sm">
+      <h1 ref="titleRef" class="text-5xl sm:text-7xl md:text-[9vw] font-serif italic leading-none tracking-tight px-12">
         {{ title }}
       </h1>
-      <p ref="subtitleRef" class="text-sm md:text-xl font-medium tracking-[0.2em] max-w-2xl mx-auto opacity-0 translate-y-4">
+      <p ref="subtitleRef" class="text-base md:text-xl font-medium tracking-[0.1em] md:tracking-[0.2em] max-w-2xl mx-auto opacity-0 translate-y-4 leading-relaxed">
         {{ subtitle }}
       </p>
       <div ref="btnRef" class="opacity-0 translate-y-4">
-        <button class="px-12 py-5 bg-primary text-background font-black uppercase tracking-widest text-[10px] rounded-full hover:bg-accent hover:text-white transition-all duration-700 shadow-2xl">Begin Escape</button>
+        <button class="px-8 md:px-12 py-4 md:py-5 bg-primary text-background font-black uppercase tracking-widest text-[10px] rounded-full hover:bg-accent hover:text-white transition-all duration-700">Begin Escape</button>
       </div>
     </div>
     

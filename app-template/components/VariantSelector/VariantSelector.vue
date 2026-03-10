@@ -1,43 +1,62 @@
 <template>
-  <div 
+  <div
     v-show="isVisible"
-    class="fixed bottom-0 md:bottom-8 right-0 md:right-8 z-[100] w-full md:w-80 h-[70vh] md:h-auto bg-black/95 backdrop-blur-2xl border-t md:border border-white/10 p-6 md:rounded-3xl shadow-2xl text-white overflow-hidden flex flex-col"
+    class="fixed bottom-0 md:bottom-8 right-0 md:right-8 w-full md:w-80 h-[70vh] md:h-auto bg-black/95 backdrop-blur-2xl border-t md:border border-white/10 p-6 md:rounded-3xl shadow-2xl text-white overflow-hidden flex flex-col variant-selector"
   >
     <div class="flex items-center justify-between mb-8">
       <div class="flex flex-col">
-        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mb-1">Variant Selector</h3>
-        <div class="text-[9px] text-white/20 font-medium">Industry Showcase v2.0</div>
+        <h3
+          class="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mb-1"
+        >
+          Variant Selector
+        </h3>
       </div>
-      <button @click="isVisible = false" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all">
+      <button
+        @click="isVisible = false"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all"
+      >
         <X :size="14" />
       </button>
     </div>
 
     <!-- Industry Switcher -->
     <div class="mb-10">
-      <label class="block text-[10px] font-bold uppercase tracking-widest text-white/30 mb-4 ml-1">Current Industry</label>
-      <select 
+      <label
+        class="block text-[10px] font-bold uppercase tracking-widest text-white/30 mb-4 ml-1"
+        >Current Industry</label
+      >
+      <select
         v-model="currentIndustry"
         class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-white/40 transition-colors appearance-none cursor-pointer"
       >
-        <option v-for="ind in industries" :key="ind.path" :value="ind.path" class="bg-[#111] text-white">{{ ind.name }}</option>
+        <option
+          v-for="ind in industries"
+          :key="ind.path"
+          :value="ind.path"
+          class="bg-[#111] text-white"
+        >
+          {{ ind.name }}
+        </option>
       </select>
     </div>
 
     <!-- Navigation Variant -->
     <div class="mb-10 pb-8 border-b border-white/5">
       <div class="flex items-center justify-between mb-4 px-1">
-        <label class="text-[10px] font-bold uppercase tracking-widest text-white/50">Navigation</label>
+        <label
+          class="text-[10px] font-bold uppercase tracking-widest text-white/50"
+          >Navigation</label
+        >
         <div class="flex gap-1.5">
-          <button 
-            v-for="v in ['A', 'B', 'C', 'D']" 
+          <button
+            v-for="v in ['A', 'B', 'C', 'D']"
             :key="v"
             @click="setVariant('nav', v as any)"
             :class="[
               'w-8 h-8 rounded-lg text-[10px] font-black transition-all duration-300',
-              config.nav === v 
-                ? 'bg-white text-black shadow-lg shadow-white/10' 
-                : 'bg-white/5 text-white/30 hover:bg-white/10 hover:text-white'
+              config.nav === v
+                ? 'bg-white text-black shadow-lg shadow-white/10'
+                : 'bg-white/5 text-white/30 hover:bg-white/10 hover:text-white',
             ]"
           >
             {{ v }}
@@ -48,11 +67,18 @@
 
     <!-- Section Variants -->
     <div class="space-y-6 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
-      <div v-for="section in sections" :key="section" class="flex items-center justify-between px-1">
-        <label class="text-[10px] font-bold uppercase tracking-widest text-white/40">{{ section }}</label>
+      <div
+        v-for="section in sections"
+        :key="section"
+        class="flex items-center justify-between px-1"
+      >
+        <label
+          class="text-[10px] font-bold uppercase tracking-widest text-white/40"
+          >{{ section }}</label
+        >
         <div class="flex gap-1.5">
-          <button 
-            v-for="v in ['A', 'B', 'C']" 
+          <button
+            v-for="v in ['A', 'B', 'C']"
             :key="v"
             @click="setVariant(section.toLowerCase() as any, v as any)"
             :class="[
@@ -70,17 +96,19 @@
 
     <!-- Share Info -->
     <div class="mt-8 pt-6 border-t border-white/5">
-      <div class="text-[9px] text-white/20 font-medium text-center italic tracking-wider">
+      <div
+        class="text-[9px] text-white/20 font-medium text-center italic tracking-wider"
+      >
         URL automatically updates with your selection
       </div>
     </div>
   </div>
 
   <!-- Toggle Trigger -->
-  <button 
+  <button
     v-if="!isVisible"
     @click="isVisible = true"
-    class="fixed bottom-6 md:bottom-8 right-6 md:right-8 z-[100] w-12 md:w-14 h-12 md:h-14 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-2xl hover:rotate-90 duration-500"
+    class="fixed bottom-6 md:bottom-8 right-6 md:right-8 w-12 md:w-14 h-12 md:h-14 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-2xl hover:rotate-90 duration-500 variant-selector-trigger"
   >
     <Settings :size="20" class="md:hidden" />
     <Settings :size="24" class="hidden md:block" />
@@ -88,60 +116,73 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { X, Settings } from 'lucide-vue-next'
-import { useRouter, useRoute } from 'vue-router'
-import { useVariantConfig, type VariantConfig } from '~/composables/useVariantConfig'
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import { X, Settings } from "lucide-vue-next";
+import { useRouter, useRoute } from "vue-router";
+import {
+  useVariantConfig,
+  type VariantConfig,
+} from "~/composables/useVariantConfig";
 
-const isVisible = ref(false)
-const { config, setVariant } = useVariantConfig()
-const router = useRouter()
-const route = useRoute()
+const isVisible = ref(false);
+const { config, setVariant } = useVariantConfig();
+const router = useRouter();
+const route = useRoute();
 
 const currentIndustry = computed({
   get: () => route.path,
-  set: (val) => router.push({ path: val, query: route.query })
-})
+  set: (val) => router.push({ path: val, query: route.query }),
+});
 
 const industries = [
-  { name: 'Yoga', path: '/yoga' },
-  { name: 'Physiotherapy', path: '/physiotherapy' },
-  { name: 'Restaurant', path: '/restaurant' },
-  { name: 'Real Estate', path: '/realestate' },
-  { name: 'Fashion', path: '/fashion' },
-  { name: 'Architecture', path: '/architecture' },
-  { name: 'Fitness', path: '/fitness' },
-  { name: 'Legal', path: '/legal' },
-  { name: 'Tech', path: '/tech' },
-  { name: 'Hotel', path: '/hotel' },
-  { name: 'Automotive', path: '/automotive' },
-  { name: 'Creative', path: '/creative' },
-]
+  { name: "Yoga", path: "/yoga" },
+  { name: "Physiotherapy", path: "/physiotherapy" },
+  { name: "Restaurant", path: "/restaurant" },
+  { name: "Real Estate", path: "/realestate" },
+  { name: "Fashion", path: "/fashion" },
+  { name: "Architecture", path: "/architecture" },
+  { name: "Fitness", path: "/fitness" },
+  { name: "Legal", path: "/legal" },
+  { name: "Tech", path: "/tech" },
+  { name: "Hotel", path: "/hotel" },
+  { name: "Automotive", path: "/automotive" },
+  { name: "Creative", path: "/creative" },
+];
 
 const sections = computed(() => {
-  const base = ['Hero', 'About', 'Services', 'Portfolio', 'Testimonials', 'Team', 'Pricing', 'Contact', 'Footer']
-  if (route.path === '/physiotherapy') {
-    return [...base, 'Blog', 'BMI']
+  const base = [
+    "Hero",
+    "About",
+    "Services",
+    "Portfolio",
+    "Testimonials",
+    "Team",
+    "Pricing",
+    "Contact",
+    "Footer",
+  ];
+  if (route.path === "/physiotherapy") {
+    return [...base, "Blog", "BMI"];
   }
-  if (route.path === '/yoga') {
-    return [...base, 'Blog']
+  if (route.path === "/yoga") {
+    return [...base, "Blog"];
   }
-  return base
-})
+  return base;
+});
 
 const handleKeydown = (e: KeyboardEvent) => {
-  if (e.shiftKey && (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'd') {
-    isVisible.value = !isVisible.value
+  if (e.shiftKey && (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "d") {
+    isVisible.value = !isVisible.value;
   }
-}
+};
 
 onMounted(() => {
-  window.addEventListener('keydown', handleKeydown)
-})
+  window.addEventListener("keydown", handleKeydown);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
-})
+  window.removeEventListener("keydown", handleKeydown);
+});
 </script>
 
 <style scoped>
@@ -154,5 +195,8 @@ onUnmounted(() => {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
+}
+.variant-selector, .variant-selector-trigger {
+  z-index: 999999 !important;
 }
 </style>

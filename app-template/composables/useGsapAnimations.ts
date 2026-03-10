@@ -39,20 +39,20 @@ export const useGsapAnimations = () => {
   const parallaxImage = (element: string | HTMLElement, speed: number = 0.1) => {
     if (!process.client || !element) return
 
-    const animation = gsap.to(element, {
-      scrollTrigger: {
-        trigger: element,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-        invalidateOnRefresh: true
-      },
-      y: (index, target) => {
-        const height = (target as HTMLElement).offsetHeight
-        return height * speed
-      },
-      ease: 'none'
-    })
+    const animation = gsap.fromTo(element, 
+      { y: (index, target) => -(target as HTMLElement).offsetHeight * (speed / 2) },
+      {
+        scrollTrigger: {
+          trigger: (element as HTMLElement).parentElement,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+        y: (index, target) => (target as HTMLElement).offsetHeight * (speed / 2),
+        ease: 'none'
+      }
+    )
 
     return animation
   }

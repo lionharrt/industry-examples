@@ -1,22 +1,24 @@
 <template>
   <div class="architecture-page bg-[#FAF9F6]">
-    <component :is="heroComponent" v-bind="architectureData.hero" />
-    <component :is="aboutComponent" v-bind="architectureData.about" />
-    <component :is="servicesComponent" :services="architectureData.services" />
-    <component :is="portfolioComponent" :items="architectureData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="architectureData.testimonials" />
-    <component :is="teamComponent" :team="architectureData.team" />
-    <component :is="pricingComponent" :tiers="architectureData.pricing" />
-    <component :is="contactComponent" v-bind="architectureData.contact" />
-    <component :is="footerComponent" v-bind="architectureData.footer" />
+    <component :is="heroComponent" v-bind="architectureData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="architectureData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="architectureData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="architectureData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="architectureData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="architectureData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="architectureData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="architectureData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="architectureData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { architectureData } from '~/data/industries/architecture'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Architecture Specific Variants
 import HeroA from '~/components/Industries/Architecture/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Architecture/Footer/VariantC.vue'
 
 useIndustryTheme('architecture')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

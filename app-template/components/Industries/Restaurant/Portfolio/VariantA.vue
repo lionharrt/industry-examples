@@ -15,7 +15,7 @@
           <ParallaxImage 
             :src="item.image" 
             :alt="item.title"
-            class="w-full h-auto grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+            class="w-full aspect-[4/5] grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 md:p-8 flex flex-col justify-end">
             <span class="text-[#D4AF37] text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-1 md:mb-2">Signature Dish</span>

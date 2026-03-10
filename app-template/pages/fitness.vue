@@ -1,22 +1,24 @@
 <template>
   <div class="fitness-page bg-black">
-    <component :is="heroComponent" v-bind="fitnessData.hero" />
-    <component :is="aboutComponent" v-bind="fitnessData.about" />
-    <component :is="servicesComponent" :services="fitnessData.services" />
-    <component :is="portfolioComponent" :items="fitnessData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="fitnessData.testimonials" />
-    <component :is="teamComponent" :team="fitnessData.team" />
-    <component :is="pricingComponent" :tiers="fitnessData.pricing" />
-    <component :is="contactComponent" v-bind="fitnessData.contact" />
-    <component :is="footerComponent" v-bind="fitnessData.footer" />
+    <component :is="heroComponent" v-bind="fitnessData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="fitnessData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="fitnessData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="fitnessData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="fitnessData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="fitnessData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="fitnessData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="fitnessData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="fitnessData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { fitnessData } from '~/data/industries/fitness'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Fitness Specific Variants
 import HeroA from '~/components/Industries/Fitness/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Fitness/Footer/VariantC.vue'
 
 useIndustryTheme('fitness')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

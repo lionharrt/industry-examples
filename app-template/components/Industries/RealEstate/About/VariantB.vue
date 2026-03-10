@@ -1,18 +1,18 @@
 <template>
-  <section class="py-48 bg-background text-primary px-12 md:px-24 relative overflow-hidden">
+  <section class="py-24 md:py-48 bg-background text-primary px-6 md:px-24 relative overflow-hidden">
     <!-- Large background watermark -->
-    <div class="absolute -right-24 top-0 text-[40vw] font-black opacity-[0.03] select-none pointer-events-none">ESTATE</div>
+    <div class="absolute -right-12 md:-right-24 top-0 text-[60vw] md:text-[40vw] font-black opacity-[0.03] select-none pointer-events-none">ESTATE</div>
     
-    <div class="max-w-4xl mx-auto space-y-24 relative z-10">
-      <h2 class="text-[8vw] font-bold uppercase leading-none tracking-tighter text-accent">{{ title }}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-        <p class="text-xl font-medium leading-relaxed italic">
+    <div class="max-w-4xl mx-auto space-y-12 md:space-y-24 relative z-10">
+      <h2 class="text-[12vw] md:text-[8vw] font-bold uppercase leading-none tracking-tighter text-accent">{{ title }}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+        <p class="text-lg md:text-xl font-medium leading-relaxed italic">
           "{{ content }}"
         </p>
-        <div class="space-y-12">
-          <div v-for="val in values" :key="val.title" class="space-y-4 group cursor-default">
-            <p class="text-xs font-black uppercase tracking-[0.5em] text-accent group-hover:translate-x-2 transition-transform">{{ val.title }}</p>
-            <p class="text-primary/40 text-sm leading-relaxed">{{ val.desc }}</p>
+        <div class="space-y-8 md:space-y-12">
+          <div v-for="val in values" :key="val.title" class="space-y-3 md:space-y-4 group cursor-default">
+            <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-accent group-hover:translate-x-2 transition-transform">{{ val.title }}</p>
+            <p class="text-primary/40 text-xs md:text-sm leading-relaxed">{{ val.desc }}</p>
           </div>
         </div>
       </div>

@@ -1,14 +1,15 @@
 <template>
-  <section class="h-screen bg-black text-primary flex flex-col items-center justify-center p-6 relative overflow-hidden">
+  <section class="h-screen bg-black text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
     <!-- Grainy overlay effect -->
     <div class="absolute inset-0 z-1 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
     
-    <div class="relative z-10 text-center">
-      <h1 ref="titleRef" class="text-[18vw] font-black uppercase leading-[0.75] tracking-tighter mix-blend-difference">
-        {{ title?.split(' ')[0] }}<br/>
-        <span class="text-accent italic">{{ title?.split(' ')[1] }}</span>
+    <div class="relative z-10 text-center px-4">
+      <h1 ref="titleRef" class="text-6xl sm:text-8xl md:text-[12vw] font-black uppercase leading-[0.8] tracking-tighter">
+        <div v-for="(word, i) in title?.split(' ')" :key="i" :class="{ 'text-[#dc143c] italic': i === 1 }">
+          {{ word }}
+        </div>
       </h1>
-      <p ref="subtitleRef" class="text-xs font-bold uppercase tracking-[1.5em] mt-12 opacity-0">
+      <p ref="subtitleRef" class="text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] md:tracking-[1.5em] mt-8 md:mt-12 opacity-0 leading-relaxed">
         {{ subtitle }}
       </p>
     </div>

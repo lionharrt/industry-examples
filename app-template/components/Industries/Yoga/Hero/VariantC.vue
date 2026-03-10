@@ -2,10 +2,10 @@
   <section class="relative h-screen w-full bg-[#f5f1e9] flex items-center justify-center overflow-hidden px-6">
     <!-- Abstract Sand Dunes / Flow -->
     <div class="absolute inset-0 z-0">
-      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="absolute bottom-0 w-full h-2/3 text-accent/5 fill-current flow-path-1">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="absolute bottom-0 -left-[1px] w-[calc(100%+2px)] h-2/3 text-accent/5 fill-current flow-path-1">
         <path d="M0 1000 V800 Q250 700 500 800 T1000 800 V1000 Z" />
       </svg>
-      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="absolute bottom-0 w-full h-1/2 text-accent/10 fill-current flow-path-2">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="absolute bottom-0 -left-[1px] w-[calc(100%+2px)] h-1/2 text-accent/10 fill-current flow-path-2">
         <path d="M0 1000 V900 Q250 800 500 900 T1000 900 V1000 Z" />
       </svg>
     </div>
@@ -34,7 +34,7 @@
 
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 hero-scroll opacity-0">
-      <div class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.4em] text-primary/20 rotate-90 whitespace-nowrap mb-6 md:mb-8">Scroll to Flow</div>
+      <div class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.4em] text-primary/20 vertical-text whitespace-nowrap mb-6 md:mb-8">Scroll to Flow</div>
       <div class="w-[1px] h-8 md:h-12 bg-gradient-to-b from-primary/20 to-transparent"></div>
     </div>
   </section>
@@ -57,3 +57,10 @@ onMounted(() => {
   gsap.to('.flow-path-2', { x: -50, duration: 15, repeat: -1, yoyo: true, ease: 'sine.inOut' })
 })
 </script>
+
+<style scoped>
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+</style>

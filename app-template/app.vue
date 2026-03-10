@@ -7,7 +7,7 @@
     </main>
 
     <!-- Global Variant Selector -->
-    <VariantSelector v-if="route.path !== '/'" />
+    <VariantSelector v-if="showVariantSelector" />
   </div>
 </template>
 
@@ -16,12 +16,16 @@
  * NUXT-GSAP-STARTER
  * A boilerplate for digital experiences.
  */
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLenis } from '~/composables/useLenis'
 
 const route = useRoute()
 const { initLenis } = useLenis()
+
+const showVariantSelector = computed(() => {
+  return route.path !== '/' && route.query.toolbar !== 'false' && route.query.hideToolbar !== 'true'
+})
 
 onMounted(() => {
   initLenis()
@@ -29,16 +33,8 @@ onMounted(() => {
 </script>
 
 <style>
-:root {
-  --bg-color: #ffffff;
-  --primary-color: #000000;
-  --accent-color: #888888;
-}
-
 body {
   @apply bg-background text-primary antialiased;
-  background-color: var(--bg-color);
-  color: var(--primary-color);
 }
 
 .app-root {

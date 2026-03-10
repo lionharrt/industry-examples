@@ -19,7 +19,8 @@ export const creativeData = {
   portfolio: [
     { image: 'https://images.unsplash.com/photo-1558655146-d09347e92766', title: 'Cyberpunk 2026' },
     { image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f', title: 'Retro-Future UI' },
-    { image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa', title: 'Neural Networks' }
+    { image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e', title: 'Neural Networks' },
+    { image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d', title: 'Brutal Aesthetics' }
   ],
   testimonials: [
     { quote: "They didn't just build a site; they built a new reality.", author: "Marcus Thorne", role: "CEO, NexaCorp" },

@@ -8,22 +8,22 @@
 
     <div class="relative z-10 px-6 md:px-24 max-w-3xl space-y-6 md:space-y-10">
       <div class="space-y-2">
-        <div class="w-12 md:w-20 h-2 md:h-4 bg-black"></div>
-        <div class="w-6 md:w-10 h-1 md:h-2 bg-accent"></div>
+        <div class="w-12 md:w-20 h-2 md:h-4 bg-accent md:bg-black"></div>
+        <div class="w-6 md:w-10 h-1 md:h-2 bg-white md:bg-accent"></div>
       </div>
       
-      <h1 class="text-5xl sm:text-6xl md:text-8xl font-black italic leading-[0.9] tracking-tighter uppercase">
+      <h1 class="text-5xl sm:text-6xl md:text-8xl font-black italic leading-none tracking-tighter uppercase text-white md:text-black">
         {{ title?.split(' ')[0] }}<br/>
         <span class="bg-black text-accent px-3 py-1 inline-block mt-2">{{ title?.split(' ').slice(1).join(' ') }}</span>
       </h1>
       
-      <p class="text-sm md:text-xl font-bold uppercase tracking-tight max-w-md border-l-4 border-black pl-4">
+      <p class="text-sm md:text-xl font-bold uppercase tracking-tight max-w-md border-l-4 border-white md:border-black pl-4 text-white/90 md:text-black/70">
         {{ subtitle }}
       </p>
       
-      <button class="group flex items-center gap-4 md:gap-8 text-lg md:text-2xl font-black uppercase italic">
-        <span class="border-b-4 border-black group-hover:border-accent transition-colors">{{ cta }}</span>
-        <div class="w-12 h-12 md:w-16 md:h-16 bg-black text-accent flex items-center justify-center group-hover:translate-x-3 transition-transform">
+      <button class="group flex items-center gap-4 md:gap-8 text-lg md:text-2xl font-black uppercase italic text-white md:text-black">
+        <span class="border-b-4 border-white md:border-black group-hover:border-accent transition-colors">{{ cta }}</span>
+        <div class="w-12 h-12 md:w-16 md:h-16 bg-white md:bg-black text-black md:text-accent flex items-center justify-center group-hover:translate-x-3 transition-transform">
           <ArrowRight :size="32" stroke-width="3" class="hidden md:block" />
           <ArrowRight :size="24" stroke-width="3" class="md:hidden" />
         </div>

@@ -7,7 +7,7 @@ export const automotiveData = {
   hero: {
     title: 'THE ART OF VELOCITY',
     subtitle: 'High-performance engineering and bespoke automotive design for the global elite.',
-    video: 'https://storage.googleapis.com/industry-examples.firebasestorage.app/automotive.mp4',
+    video: 'https://storage.googleapis.com/industry-examples.firebasestorage.app/carvideo.mp4',
     cta: 'Configure Your Build'
   },
   about: {
@@ -34,7 +34,7 @@ export const automotiveData = {
     { quote: 'The level of craftsmanship and technical detail is unlike anything else in the industry.', author: 'Marco Rossi', role: 'Collector' }
   ],
   team: [
-    { name: 'Dante Apex', role: 'Chief Engineer', image: 'https://images.unsplash.com/photo-1519085184628-6607c24d8b17' },
+    { name: 'Dante Apex', role: 'Chief Engineer', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d' },
     { name: 'Sarah Velocity', role: 'Aero Director', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956' }
   ],
   pricing: [

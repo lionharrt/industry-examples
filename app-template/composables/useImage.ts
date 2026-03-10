@@ -10,8 +10,10 @@ export const useImage = () => {
     // Extract the ID if it's a full Unsplash URL or a path
     let id = src
     if (src.includes('unsplash.com')) {
+      // Remove existing query parameters first
+      const cleanSrc = src.split('?')[0]
       // Handle both /photo-ID and ?id=ID formats
-      const photoMatch = src.match(/photo-([^?&/]+)/)
+      const photoMatch = cleanSrc.match(/photo-([^?&/]+)/)
       if (photoMatch) {
         id = photoMatch[1]
       }

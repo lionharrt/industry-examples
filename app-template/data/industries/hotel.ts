@@ -23,11 +23,13 @@ export const hotelData = {
   ],
   testimonials: [
     { quote: "A poetic stay that I will never forget.", author: "Julian Barnes", role: "Writer" },
-    { quote: "The attention to detail is truly artisanal.", author: "Sophie Dahl", role: "Traveler" }
+    { quote: "The attention to detail is truly artisanal.", author: "Sophie Dahl", role: "Traveler" },
+    { quote: "A sanctuary where the soul finds its rhythm.", author: "Marcus Aurelius", role: "Philosopher" }
   ],
   team: [
-    { name: 'Elena', role: 'Concierge', image: 'https://images.unsplash.com/photo-1594744803329-a584af1bb51e' },
-    { name: 'Luca', role: 'Head of Experience', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d' }
+    { name: 'Elena', role: 'Concierge', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956' },
+    { name: 'Luca', role: 'Head of Experience', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d' },
+    { name: 'Sofia', role: 'Artisan Chef', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80' }
   ],
   pricing: [
     { name: 'Garden Room', price: '€400/night', features: ['Private Terrace', 'Daily Breakfast', 'Spa Access'] },

@@ -1,22 +1,24 @@
 <template>
   <div class="legal-page bg-[#E1E1E1]">
-    <component :is="heroComponent" v-bind="legalData.hero" />
-    <component :is="aboutComponent" v-bind="legalData.about" />
-    <component :is="servicesComponent" :services="legalData.services" />
-    <component :is="portfolioComponent" :items="legalData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="legalData.testimonials" />
-    <component :is="teamComponent" :team="legalData.team" />
-    <component :is="pricingComponent" :tiers="legalData.pricing" />
-    <component :is="contactComponent" v-bind="legalData.contact" />
-    <component :is="footerComponent" v-bind="legalData.footer" />
+    <component :is="heroComponent" v-bind="legalData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="legalData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="legalData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="legalData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="legalData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="legalData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="legalData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="legalData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="legalData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { legalData } from '~/data/industries/legal'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Legal Specific Variants
 import HeroA from '~/components/Industries/Legal/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Legal/Footer/VariantC.vue'
 
 useIndustryTheme('legal')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

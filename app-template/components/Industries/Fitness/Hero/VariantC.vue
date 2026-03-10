@@ -14,18 +14,18 @@
     
     <div class="absolute inset-0 flex flex-col items-center justify-center hidden md:flex pointer-events-none">
       <div class="whitespace-nowrap flex flex-col gap-0">
-        <div v-for="i in 8" :key="i" class="text-[12vw] font-black italic leading-[0.8] tracking-tighter opacity-5 uppercase outline-text text-transparent">
+        <div v-for="i in 8" :key="i" class="text-[min(10vw,140px)] font-black italic leading-[1] tracking-tighter opacity-5 uppercase outline-text text-transparent">
           {{ title }}
         </div>
       </div>
     </div>
 
-    <div class="relative z-10 text-center space-y-6 md:space-y-10 p-8 sm:p-12 md:p-20 bg-accent text-black shadow-[12px_12px_0_0_#ffffff] mx-4 border-4 md:border-8 border-black max-w-4xl">
-      <div class="space-y-4 md:space-y-8">
-        <h2 class="text-4xl sm:text-5xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">{{ title }}</h2>
-        <div class="h-1 md:h-2 bg-black w-16 md:w-32 mx-auto"></div>
-        <p class="text-sm md:text-xl font-black uppercase tracking-widest max-w-xl mx-auto">{{ subtitle }}</p>
-        <button class="px-8 md:px-16 py-3 md:py-5 bg-black text-accent font-black uppercase italic text-sm md:text-lg hover:bg-white hover:text-black transition-all border-2 md:border-4 border-black">
+    <div class="relative z-10 text-center space-y-6 md:space-y-10 p-8 sm:p-12 md:p-16 bg-accent text-black shadow-[12px_12px_0_0_#ffffff] mx-4 border-4 md:border-8 border-black max-w-2xl">
+      <div class="space-y-4 md:space-y-6">
+        <h2 class="text-4xl sm:text-5xl md:text-[min(8vw,100px)] font-black italic uppercase leading-none tracking-tighter">{{ title }}</h2>
+        <div class="h-1 md:h-2 bg-black w-12 md:w-20 mx-auto"></div>
+        <p class="text-xs md:text-lg font-black uppercase tracking-widest max-w-lg mx-auto">{{ subtitle }}</p>
+        <button class="px-6 md:px-10 py-3 md:py-4 bg-black text-accent font-black uppercase italic text-sm md:text-base hover:bg-white hover:text-black transition-all border-2 md:border-4 border-black">
           {{ cta }}
         </button>
       </div>

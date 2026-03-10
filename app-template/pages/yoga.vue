@@ -1,23 +1,25 @@
 <template>
   <div class="yoga-page bg-background">
-    <component :is="heroComponent" v-bind="yogaData.hero" />
-    <component :is="aboutComponent" v-bind="yogaData.about" />
-    <component :is="servicesComponent" :services="yogaData.services" />
-    <component :is="portfolioComponent" :items="yogaData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="yogaData.testimonials" />
-    <component :is="blogComponent" v-bind="yogaData.blog" />
-    <component :is="teamComponent" :team="yogaData.team" />
-    <component :is="pricingComponent" :tiers="yogaData.pricing" />
-    <component :is="contactComponent" v-bind="yogaData.contact" />
-    <component :is="footerComponent" v-bind="yogaData.footer" />
+    <component :is="heroComponent" v-bind="yogaData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="yogaData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="yogaData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="yogaData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="yogaData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="blogComponent" v-bind="yogaData.blog" :key="`blog-${config.blog}`" />
+    <component :is="teamComponent" :team="yogaData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="yogaData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="yogaData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="yogaData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { yogaData } from '~/data/industries/yoga'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Yoga Specific Variants
 import HeroA from '~/components/Industries/Yoga/Hero/VariantA.vue'
@@ -53,6 +55,14 @@ import BlogC from '~/components/Industries/Yoga/Blog/VariantC.vue'
 
 useIndustryTheme('yoga')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

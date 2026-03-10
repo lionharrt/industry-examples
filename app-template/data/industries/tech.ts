@@ -19,7 +19,7 @@ export const techData = {
   portfolio: [
     { image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b', title: 'Data Visualizer' },
     { image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa', title: 'Global Network' },
-    { image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc48', title: 'Server Core' }
+    { image: 'https://images.unsplash.com/photo-1518770660439-4636190af475', title: 'Server Core' }
   ],
   testimonials: [
     { quote: "Nexus Labs is the backbone of our entire tech stack.", author: "Dr. Aris Varma", role: "CTO, OmniScale" },
@@ -33,6 +33,6 @@ export const techData = {
     { name: 'Startup', price: '$99/mo', features: ['10TB Storage', 'Global CDN', '24/7 Support'] },
     { name: 'Enterprise', price: 'Custom', features: ['Unlimited Power', 'Dedicated HW', 'VIP Access'] }
   ],
-  contact: { title: 'DEPOY NOW', email: 'support@nexuslabs.io', phone: '+1 800 NEXUS' },
+  contact: { title: 'DEPLOY NOW', email: 'support@nexuslabs.io', phone: '+1 800 NEXUS' },
   footer: { copyright: '© 2026 Nexus Labs. Powering the digital frontier.' }
 }

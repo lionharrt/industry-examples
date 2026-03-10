@@ -6,7 +6,7 @@
         :key="idx" 
         class="group relative h-[40vh] sm:h-[60vh] overflow-hidden first:col-span-1 sm:first:col-span-2 first:h-[50vh] sm:first:h-[80vh] rounded-xl md:rounded-2xl shadow-xl"
       >
-        <ParallaxImage :src="item.image" speed="0.05" />
+        <ParallaxImage :src="item.image" :speed="0.05" class="w-full h-full" />
         <div class="absolute top-6 left-6 md:top-12 md:left-12">
           <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] md:tracking-[1em] text-white/40 group-hover:text-[#D4AF37] transition-colors">Project 0{{ idx + 1 }}</span>
         </div>

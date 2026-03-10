@@ -1,22 +1,24 @@
 <template>
   <div class="fashion-page bg-black">
-    <component :is="heroComponent" v-bind="fashionData.hero" />
-    <component :is="aboutComponent" v-bind="fashionData.about" />
-    <component :is="servicesComponent" :services="fashionData.services" />
-    <component :is="portfolioComponent" :items="fashionData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="fashionData.testimonials" />
-    <component :is="teamComponent" :team="fashionData.team" />
-    <component :is="pricingComponent" :tiers="fashionData.pricing" />
-    <component :is="contactComponent" v-bind="fashionData.contact" />
-    <component :is="footerComponent" v-bind="fashionData.footer" />
+    <component :is="heroComponent" v-bind="fashionData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="fashionData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="fashionData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="fashionData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="fashionData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="fashionData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="fashionData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="fashionData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="fashionData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { fashionData } from '~/data/industries/fashion'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Fashion Specific Variants
 import HeroA from '~/components/Industries/Fashion/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Fashion/Footer/VariantC.vue'
 
 useIndustryTheme('fashion')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

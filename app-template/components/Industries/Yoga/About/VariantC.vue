@@ -20,8 +20,8 @@
 
       <div class="flex flex-wrap justify-center gap-8 md:gap-16 pt-8 md:pt-12 about-stats opacity-0">
         <div v-for="stat in stats" :key="stat.label" class="text-center group min-w-[120px]">
-          <div class="text-4xl md:text-6xl font-light mb-2 md:mb-4 text-accent transition-transform duration-500 group-hover:scale-110">{{ stat.value }}</div>
-          <div class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.4em] text-white/20">{{ stat.label }}</div>
+          <div class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 text-accent transition-transform duration-500 group-hover:scale-110">{{ stat.value }}</div>
+          <div class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.4em] text-white/40">{{ stat.label }}</div>
         </div>
       </div>
     </div>

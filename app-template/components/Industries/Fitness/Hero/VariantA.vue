@@ -11,7 +11,7 @@
         EST. 2026 // KINETIC_FORCE
       </div>
       <div class="overflow-hidden">
-        <h1 class="text-5xl sm:text-7xl md:text-9xl font-black italic tracking-tighter leading-[0.9] text-white uppercase hero-title opacity-0 translate-y-full">
+        <h1 class="text-5xl sm:text-7xl md:text-[min(10vw,120px)] font-black italic tracking-tighter leading-[1] text-white uppercase hero-title opacity-0 translate-y-full">
           {{ title?.split(' ')[0] }}<br/>
           <span class="text-accent">{{ title?.split(' ').slice(1).join(' ') }}</span>
         </h1>

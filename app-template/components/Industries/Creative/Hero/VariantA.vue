@@ -1,15 +1,15 @@
 <template>
-  <section class="h-screen bg-[#111111] text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
+  <section class="min-h-screen bg-[#111111] text-white flex flex-col items-center justify-center p-6 relative overflow-hidden py-24 md:py-0">
     <!-- Acid green floating blobs -->
     <div class="absolute top-1/4 -left-20 w-96 h-96 bg-[#B0BF1A] rounded-full blur-[120px] opacity-20 animate-pulse"></div>
     <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#FF5F1F] rounded-full blur-[120px] opacity-20 animate-pulse delay-700"></div>
 
-    <div class="relative z-10 text-center">
-      <h1 ref="titleRef" class="text-[15vw] font-black uppercase leading-[0.8] tracking-tighter mb-12">
+    <div class="relative z-10 text-center px-4">
+      <h1 ref="titleRef" class="text-6xl sm:text-8xl md:text-[12vw] font-black uppercase leading-[0.85] tracking-tighter mb-8 md:mb-12">
         <span class="block">CREATIVE</span>
         <span class="block text-[#FF5F1F]">CHAOS</span>
       </h1>
-      <p ref="subtitleRef" class="text-xs font-black uppercase tracking-[1em] text-white/40">
+      <p ref="subtitleRef" class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] md:tracking-[0.8em] text-white/40 max-w-xs md:max-w-none mx-auto leading-relaxed">
         {{ subtitle }}
       </p>
     </div>

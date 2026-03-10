@@ -1,22 +1,24 @@
 <template>
-  <div class="realestate-page bg-white">
-    <component :is="heroComponent" v-bind="realestateData.hero" />
-    <component :is="aboutComponent" v-bind="realestateData.about" />
-    <component :is="servicesComponent" :services="realestateData.services" />
-    <component :is="portfolioComponent" :items="realestateData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="realestateData.testimonials" />
-    <component :is="teamComponent" :team="realestateData.team" />
-    <component :is="pricingComponent" :tiers="realestateData.pricing" />
-    <component :is="contactComponent" v-bind="realestateData.contact" />
-    <component :is="footerComponent" v-bind="realestateData.footer" />
+  <div class="realestate-page bg-[#000080] text-white">
+    <component :is="heroComponent" v-bind="realestateData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="realestateData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="realestateData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="realestateData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="realestateData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="realestateData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="realestateData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="realestateData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="realestateData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { realestateData } from '~/data/industries/realestate'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Real Estate Specific Variants
 import HeroA from '~/components/Industries/RealEstate/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/RealEstate/Footer/VariantC.vue'
 
 useIndustryTheme('realestate')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

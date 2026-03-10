@@ -1,22 +1,24 @@
 <template>
   <div class="hotel-page bg-[#C2B280]">
-    <component :is="heroComponent" v-bind="hotelData.hero" />
-    <component :is="aboutComponent" v-bind="hotelData.about" />
-    <component :is="servicesComponent" :services="hotelData.services" />
-    <component :is="portfolioComponent" :items="hotelData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="hotelData.testimonials" />
-    <component :is="teamComponent" :team="hotelData.team" />
-    <component :is="pricingComponent" :tiers="hotelData.pricing" />
-    <component :is="contactComponent" v-bind="hotelData.contact" />
-    <component :is="footerComponent" v-bind="hotelData.footer" />
+    <component :is="heroComponent" v-bind="hotelData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="hotelData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="hotelData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="hotelData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="hotelData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="hotelData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="hotelData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="hotelData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="hotelData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { hotelData } from '~/data/industries/hotel'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Boutique Hotel Specific Variants
 import HeroA from '~/components/Industries/Hotel/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Hotel/Footer/VariantC.vue'
 
 useIndustryTheme('hotel')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

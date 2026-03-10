@@ -19,17 +19,20 @@ export const realestateData = {
     { title: 'Design Advisory', description: 'Maximizing value through architectural excellence.', icon: 'PenTool' }
   ],
   portfolio: [
-    { image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750', title: 'Bel Air Estate' },
-    { image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c', title: 'The Glass House' },
-    { image: 'https://images.unsplash.com/photo-1600607687940-477a127195c4', title: 'Riviera Penthouse' }
+    { image: '1613490493576-7fde63acd811', title: 'Bel Air Estate' },
+    { image: '1600585154340-be6161a56a0c', title: 'The Glass House' },
+    { image: '1512917774080-9991f1c4c750', title: 'Riviera Penthouse' },
+    { image: '1600596542815-ffad4c1539a9', title: 'Milan Modern' }
   ],
   testimonials: [
     { quote: "Meridian found us a home we didn't even know existed.", author: "Alexander Hunt", role: "Investor" },
-    { quote: "The ultimate discretion and professional excellence.", author: "Sophia Lorent", role: "CEO" }
+    { quote: "The ultimate discretion and professional excellence.", author: "Sophia Lorent", role: "CEO" },
+    { quote: "A masterclass in real estate advisory.", author: "Marcus Vane", role: "Founder" }
   ],
   team: [
-    { name: 'Arthur Penhaligon', role: 'Founding Partner', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d' },
-    { name: 'Isabella', role: 'Director of Global Acquisitions', image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce' }
+    { name: 'Arthur Penhaligon', role: 'Founding Partner', image: '1560250097-0b93528c311a' },
+    { name: 'Isabella', role: 'Director of Global Acquisitions', image: '1573496359142-b8d87734a5a2' },
+    { name: 'David Chen', role: 'Chief Strategist', image: '1472099645785-5658abf4ff4e' }
   ],
   pricing: [
     { name: 'Advisory', price: '2%', features: ['Market Analysis', 'Negotiation', 'Closing Support'] },

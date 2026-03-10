@@ -2,7 +2,7 @@
   <section class="py-16 md:py-48 bg-black text-white px-6 md:px-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto space-y-12 md:space-y-24 relative z-10">
       <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 border-b-8 md:border-b-[16px] border-accent pb-8 text-center md:text-left">
-        <h2 class="text-5xl sm:text-7xl md:text-9xl font-black italic leading-[0.8] tracking-tighter uppercase">{{ title?.split(' ')[0] }}</h2>
+        <h2 class="text-5xl sm:text-7xl md:text-9xl font-black italic leading-none tracking-tighter uppercase">{{ title?.split(' ')[0] }}</h2>
         <p class="text-sm md:text-2xl font-black uppercase tracking-widest max-w-lg md:text-right italic text-accent">{{ content }}</p>
       </div>
 

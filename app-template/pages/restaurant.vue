@@ -49,10 +49,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, watch, nextTick } from "vue";
 import { restaurantData } from "~/data/industries/restaurant";
 import { useVariantConfig } from "~/composables/useVariantConfig";
 import { useIndustryTheme } from "~/composables/useIndustryTheme";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Restaurant Specific Variants
 import HeroA from "~/components/Industries/Restaurant/Hero/VariantA.vue";
@@ -85,6 +87,25 @@ import FooterC from "~/components/Industries/Restaurant/Footer/VariantC.vue";
 
 useIndustryTheme("restaurant");
 const { config } = useVariantConfig();
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(
+  config,
+  async () => {
+    await nextTick();
+    // Use multiple timeouts to ensure layout is settled in different phases
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 1000);
+  },
+  { deep: true }
+);
 
 const heroComponent = computed(() => {
   if (config.value.hero === "B") return HeroB;

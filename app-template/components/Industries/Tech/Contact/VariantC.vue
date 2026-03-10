@@ -28,11 +28,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ title: string, email: string, phone: string }>()
-const contactInfo = [
+import { computed } from 'vue'
+const props = defineProps<{ title: string, email: string, phone: string }>()
+const contactInfo = computed(() => [
   { label: 'Latency_Zone', value: 'Global_CDN' },
-  { label: 'Secure_Mail', value: 'support@nexus.io' },
+  { label: 'Secure_Mail', value: props.email },
   { label: 'Uptime_Stats', value: '99.999%' },
-  { label: 'Core_Link', value: '+1 800 NEXUS' }
-]
+  { label: 'Core_Link', value: props.phone }
+])
 </script>

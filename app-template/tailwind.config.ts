@@ -4,20 +4,10 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       colors: {
-        background: {
-          DEFAULT: '#FFFFFF', // Placeholder background
-          dark: '#F5F5F5',
-        },
-        primary: {
-          DEFAULT: '#000000', // Placeholder primary
-          light: '#333333',
-          dark: '#000000',
-        },
-        accent: {
-          DEFAULT: '#888888', // Placeholder accent
-          light: '#AAAAAA',
-          dark: '#666666',
-        }
+        background: 'var(--bg-color)',
+        primary: 'var(--primary-color)',
+        accent: 'var(--accent-color)',
+        secondary: 'var(--secondary-color)',
       },
       fontFamily: {
         serif: ['serif'],

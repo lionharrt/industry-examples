@@ -9,17 +9,17 @@
         </div>
       </div>
       
-      <div class="w-full md:w-1/2 space-y-6 md:space-y-10 text-center md:text-left">
-        <h2 class="text-4xl sm:text-5xl md:text-7xl font-black italic leading-[0.9] tracking-tighter uppercase border-b-8 md:border-[16px] border-black pb-4 md:pb-8">
+      <div class="w-full md:w-1/2 space-y-6 md:space-y-8 text-center md:text-left">
+        <h2 class="text-4xl sm:text-5xl md:text-[min(6vw,80px)] font-black italic leading-[1] tracking-tighter uppercase border-b-8 md:border-b-[12px] border-black pb-4 md:pb-6">
           {{ title }}
         </h2>
-        <p class="text-base md:text-2xl font-black leading-tight italic opacity-100">
+        <p class="text-base md:text-lg lg:text-xl font-black leading-tight italic opacity-100 uppercase">
           {{ content }}
         </p>
-        <div class="grid grid-cols-2 gap-6 md:gap-12">
+        <div class="grid grid-cols-2 gap-4 md:gap-8">
           <div v-for="stat in stats" :key="stat.label" class="space-y-1 md:space-y-2">
-            <p class="text-3xl md:text-6xl font-black italic leading-none tracking-tighter">{{ stat.value }}</p>
-            <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-accent bg-black px-3 py-1 inline-block">
+            <p class="text-3xl md:text-4xl lg:text-5xl font-black italic leading-none tracking-tighter">{{ stat.value }}</p>
+            <p class="text-[10px] md:text-xs font-black uppercase tracking-widest text-accent bg-black px-2 py-1 inline-block">
               {{ stat.label }}
             </p>
           </div>

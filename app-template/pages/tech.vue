@@ -1,22 +1,24 @@
 <template>
   <div class="tech-page bg-[#0B0E14]">
-    <component :is="heroComponent" v-bind="techData.hero" />
-    <component :is="aboutComponent" v-bind="techData.about" />
-    <component :is="servicesComponent" :services="techData.services" />
-    <component :is="portfolioComponent" :items="techData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="techData.testimonials" />
-    <component :is="teamComponent" :team="techData.team" />
-    <component :is="pricingComponent" :tiers="techData.pricing" />
-    <component :is="contactComponent" v-bind="techData.contact" />
-    <component :is="footerComponent" v-bind="techData.footer" />
+    <component :is="heroComponent" v-bind="techData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="techData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="techData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="techData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="techData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="techData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="techData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="techData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="techData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { techData } from '~/data/industries/tech'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Tech Specific Variants
 import HeroA from '~/components/Industries/Tech/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Tech/Footer/VariantC.vue'
 
 useIndustryTheme('tech')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

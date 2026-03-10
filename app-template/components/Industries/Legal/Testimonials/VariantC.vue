@@ -1,10 +1,10 @@
 <template>
-  <section class="py-48 bg-secondary text-background px-12 md:px-24">
-    <div class="max-w-7xl mx-auto flex flex-col items-center gap-24">
-      <div ref="track" class="flex gap-24 whitespace-nowrap overflow-hidden py-12 border-y-2 border-background/10">
-        <div v-for="(t, idx) in [...testimonials, ...testimonials]" :key="idx" class="flex items-center gap-12 group cursor-default">
-          <p class="text-6xl font-serif italic tracking-tighter opacity-20 group-hover:opacity-100 transition-opacity duration-700 italic">"{{ t.quote }}"</p>
-          <div class="h-2 w-24 bg-accent"></div>
+  <section class="py-16 md:py-48 bg-secondary text-primary px-6 md:px-24">
+    <div class="max-w-7xl mx-auto flex flex-col items-center gap-12 md:gap-24">
+      <div ref="track" class="flex gap-12 md:gap-24 whitespace-nowrap overflow-hidden py-8 md:py-12 border-y-2 border-primary/10">
+        <div v-for="(t, idx) in [...testimonials, ...testimonials]" :key="idx" class="flex items-center gap-6 md:gap-12 group cursor-default">
+          <p class="text-3xl sm:text-5xl md:text-6xl font-serif italic tracking-tighter text-primary opacity-70 group-hover:opacity-100 transition-opacity duration-700 italic">"{{ t.quote }}"</p>
+          <div class="h-1 md:h-2 w-16 md:w-24 bg-accent"></div>
         </div>
       </div>
     </div>

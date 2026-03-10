@@ -27,7 +27,7 @@ export const legalData = {
   portfolio: [
     { title: 'Global Tech Merger', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab' },
     { title: 'Pharma Patent Win', image: 'https://images.unsplash.com/photo-1576085898323-218337e3e43c' },
-    { title: 'Energy Sector IPO', image: 'https://images.unsplash.com/photo-1454165833767-02755157f863' }
+    { title: 'Energy Sector IPO', image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e' }
   ],
   testimonials: [
     { quote: 'Vanguard delivers the kind of strategic thinking that transforms legal challenges into business opportunities.', author: 'Robert Sterling', role: 'CEO, Global Logistics' },

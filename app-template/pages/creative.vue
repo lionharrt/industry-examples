@@ -1,22 +1,24 @@
 <template>
   <div class="creative-page bg-[#111111]">
-    <component :is="heroComponent" v-bind="creativeData.hero" />
-    <component :is="aboutComponent" v-bind="creativeData.about" />
-    <component :is="servicesComponent" :services="creativeData.services" />
-    <component :is="portfolioComponent" :items="creativeData.portfolio" />
-    <component :is="testimonialsComponent" :testimonials="creativeData.testimonials" />
-    <component :is="teamComponent" :team="creativeData.team" />
-    <component :is="pricingComponent" :tiers="creativeData.pricing" />
-    <component :is="contactComponent" v-bind="creativeData.contact" />
-    <component :is="footerComponent" v-bind="creativeData.footer" />
+    <component :is="heroComponent" v-bind="creativeData.hero" :key="`hero-${config.hero}`" />
+    <component :is="aboutComponent" v-bind="creativeData.about" :key="`about-${config.about}`" />
+    <component :is="servicesComponent" :services="creativeData.services" :key="`services-${config.services}`" />
+    <component :is="portfolioComponent" :items="creativeData.portfolio" :key="`portfolio-${config.portfolio}`" />
+    <component :is="testimonialsComponent" :testimonials="creativeData.testimonials" :key="`testimonials-${config.testimonials}`" />
+    <component :is="teamComponent" :team="creativeData.team" :key="`team-${config.team}`" />
+    <component :is="pricingComponent" :tiers="creativeData.pricing" :key="`pricing-${config.pricing}`" />
+    <component :is="contactComponent" v-bind="creativeData.contact" :key="`contact-${config.contact}`" />
+    <component :is="footerComponent" v-bind="creativeData.footer" :key="`footer-${config.footer}`" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { creativeData } from '~/data/industries/creative'
 import { useVariantConfig } from '~/composables/useVariantConfig'
 import { useIndustryTheme } from '~/composables/useIndustryTheme'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Creative Specific Variants
 import HeroA from '~/components/Industries/Creative/Hero/VariantA.vue'
@@ -49,6 +51,14 @@ import FooterC from '~/components/Industries/Creative/Footer/VariantC.vue'
 
 useIndustryTheme('creative')
 const { config } = useVariantConfig()
+
+// Refresh ScrollTrigger when variants change to handle layout shifts and pinning
+watch(config, async () => {
+  await nextTick()
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+}, { deep: true })
 
 const heroComponent = computed(() => {
   if (config.value.hero === 'B') return HeroB

@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="relative">
         <!-- Background Giant Quote -->
-        <div class="absolute -top-10 -left-6 md:-top-20 md:-left-10 text-[40vw] md:text-[30vw] font-serif text-primary/5 select-none leading-none">“</div>
+        <div class="absolute -top-10 -left-12 md:-top-20 md:-left-16 text-[40vw] md:text-[30vw] font-serif text-primary/5 select-none leading-none">“</div>
         
         <div class="relative z-10 max-w-4xl mx-auto">
           <div v-for="(t, index) in testimonials" :key="index" 

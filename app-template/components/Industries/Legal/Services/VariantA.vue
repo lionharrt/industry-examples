@@ -1,23 +1,22 @@
 <template>
-  <section class="py-48 bg-background text-white px-12 md:px-24">
-    <div class="max-w-7xl mx-auto space-y-24">
-      <div class="flex flex-col md:flex-row justify-between items-baseline gap-12 border-b border-accent/30 pb-12">
-        <h2 class="text-7xl font-serif italic tracking-tighter text-accent">Legal Expertise</h2>
-        <p class="text-xs font-black uppercase tracking-[1em] opacity-40 italic">CORE_PRACTICES</p>
+  <section class="py-16 md:py-48 bg-background text-primary px-6 md:px-24">
+    <div class="max-w-7xl mx-auto space-y-12 md:space-y-24">
+      <div class="flex flex-col md:flex-row justify-between items-center md:items-baseline gap-8 md:gap-12 border-b border-accent/30 pb-8 md:pb-12 text-center md:text-left">
+        <h2 class="text-4xl sm:text-6xl md:text-7xl font-serif italic tracking-tighter text-accent">Legal Expertise</h2>
+        <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] md:tracking-[1em] text-primary opacity-40 italic">CORE_PRACTICES</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div v-for="(service, idx) in services" :key="idx" class="p-16 border border-white/5 bg-white/5 hover:bg-white hover:text-background transition-all duration-1000 group cursor-pointer flex flex-col h-[50vh] justify-between relative overflow-hidden">
-          <div class="absolute -top-12 -right-12 text-9xl font-serif italic opacity-5 group-hover:opacity-10 transition-opacity italic">0{{ idx + 1 }}</div>
-          
-          <div class="space-y-8 relative z-10">
-            <component :is="getIcon(service.icon)" :size="48" stroke-width="1" class="text-accent" />
-            <h3 class="text-4xl font-serif italic tracking-tighter group-hover:translate-x-4 transition-transform">{{ service.name }}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
+        <div v-for="(service, idx) in services" :key="idx" class="p-8 md:p-16 border border-primary/10 bg-secondary/5 hover:bg-primary hover:text-background transition-all duration-1000 group cursor-pointer flex flex-col min-h-[400px] md:h-[50vh] justify-between relative overflow-hidden shadow-sm">
+          <div class="space-y-6 md:space-y-8 relative z-10">
+            <component :is="getIcon(service.icon)" :size="32" class="md:hidden text-accent" stroke-width="1" />
+            <component :is="getIcon(service.icon)" :size="48" stroke-width="1" class="hidden md:block text-accent" />
+            <h3 class="text-3xl md:text-4xl font-serif italic tracking-tighter group-hover:translate-x-4 transition-transform text-primary group-hover:text-background">{{ service.name }}</h3>
           </div>
           
-          <div class="relative z-10">
-            <p class="text-lg font-light italic opacity-60 mb-12">{{ service.description }}</p>
-            <button class="flex items-center gap-4 text-xs font-black uppercase tracking-widest group-hover:text-accent transition-colors">
+          <div class="relative z-10 pt-8 md:pt-0">
+            <p class="text-base md:text-lg font-light italic text-primary opacity-60 group-hover:text-background transition-all mb-8 md:mb-12">{{ service.description }}</p>
+            <button class="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-primary group-hover:text-accent transition-colors">
               <span>PRACTICE_DETAILS</span>
               <div class="w-12 h-px bg-current"></div>
             </button>

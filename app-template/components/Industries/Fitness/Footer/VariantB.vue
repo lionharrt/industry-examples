@@ -1,9 +1,9 @@
 <template>
   <footer class="py-16 md:py-48 bg-accent text-black px-6 md:px-24 border-t-[16px] md:border-t-[32px] border-black">
     <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-32 relative z-10">
-      <div class="col-span-2 space-y-8 md:space-y-16 text-center md:text-left">
-        <h2 class="text-5xl sm:text-7xl md:text-[10vw] font-black italic uppercase tracking-tighter leading-[0.7] text-black border-l-[12px] md:border-l-[24px] border-black pl-8">THE_ <br/><span class="bg-black text-accent px-4 py-2">KINETIC</span></h2>
-        <p class="text-lg md:text-3xl font-black italic uppercase tracking-tight max-w-md leading-none mx-auto md:mx-0">
+      <div class="col-span-2 space-y-6 md:space-y-10 text-center md:text-left">
+        <h2 class="text-4xl sm:text-6xl md:text-[min(6vw,80px)] font-black italic uppercase tracking-tighter leading-tight text-black border-l-[8px] md:border-l-[12px] border-black pl-4">THE_ <br/><span class="bg-black text-accent px-3 py-1">KINETIC</span></h2>
+        <p class="text-base md:text-xl font-black italic uppercase tracking-tight max-w-sm leading-tight mx-auto md:mx-0">
           Redefining human performance through algorithmic precision and high-octane methodology.
         </p>
       </div>

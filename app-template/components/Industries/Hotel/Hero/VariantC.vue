@@ -15,17 +15,17 @@
     
     <div class="absolute inset-0 bg-gradient-to-b from-[#3B2F2F]/60 via-transparent to-[#3B2F2F]/60 z-1"></div>
 
-    <div class="relative z-10 text-center px-12 max-w-5xl">
-      <div class="overflow-hidden">
-        <h1 ref="titleRef" class="text-[10vw] font-serif uppercase text-[#C2B280] leading-none tracking-[0.2em] translate-y-full italic shadow-2xl">
+    <div class="relative z-10 text-center px-6 max-w-5xl">
+      <div class="overflow-hidden px-12">
+        <h1 ref="titleRef" class="text-5xl sm:text-7xl md:text-[8vw] font-serif uppercase text-[#C2B280] leading-none tracking-tight translate-y-full italic px-12">
           {{ title }}
         </h1>
       </div>
-      <div class="mt-24 flex flex-col items-center gap-12 opacity-0 animate-fade-in">
-        <p class="text-white/60 text-lg font-medium italic tracking-widest max-w-2xl">{{ subtitle }}</p>
-        <div class="flex gap-12">
-          <div class="w-px h-24 bg-[#E2725B]"></div>
-          <div class="w-px h-24 bg-white/20"></div>
+      <div class="mt-12 md:mt-24 flex flex-col items-center gap-8 md:gap-12 opacity-0 animate-fade-in">
+        <p class="text-white/60 text-base md:text-lg font-medium italic tracking-widest max-w-2xl leading-relaxed">{{ subtitle }}</p>
+        <div class="flex gap-8 md:gap-12">
+          <div class="w-px h-16 md:h-24 bg-[#E2725B]"></div>
+          <div class="w-px h-16 md:h-24 bg-white/20"></div>
         </div>
       </div>
     </div>

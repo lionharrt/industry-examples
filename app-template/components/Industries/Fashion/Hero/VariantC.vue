@@ -15,13 +15,13 @@
     
     <div class="absolute inset-0 bg-black/40 z-1"></div>
 
-    <div class="relative z-10 text-center px-12">
+    <div class="relative z-10 text-center px-6">
       <div class="overflow-hidden">
-        <h1 ref="titleRef" class="text-[12vw] font-black uppercase text-white leading-none tracking-[0.2em] translate-y-full italic">
+        <h1 ref="titleRef" class="text-5xl sm:text-8xl md:text-[12vw] font-black uppercase text-white leading-none tracking-[0.1em] md:tracking-[0.2em] translate-y-full italic">
           {{ title }}
         </h1>
       </div>
-      <button class="mt-24 px-16 py-6 border border-white text-white font-black uppercase text-xs tracking-[1em] hover:bg-white hover:text-black transition-all">Explore_Archive</button>
+      <button class="mt-12 md:mt-24 px-8 md:px-16 py-4 md:py-6 border border-white text-white font-black uppercase text-[10px] md:text-xs tracking-[0.5em] md:tracking-[1em] hover:bg-white hover:text-black transition-all">Explore_Archive</button>
     </div>
   </section>
 </template>

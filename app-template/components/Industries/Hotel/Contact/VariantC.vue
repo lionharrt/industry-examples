@@ -1,23 +1,24 @@
 <template>
-  <section class="py-48 bg-background text-primary px-12 md:px-24">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-center relative z-10">
-      <div class="lg:col-span-7 space-y-16">
-        <h2 class="text-[10vw] font-serif italic leading-[0.8] tracking-tighter text-white shadow-2xl uppercase">SAY <br/>HELLO</h2>
-        <div class="grid grid-cols-2 gap-12 pt-16 border-t border-primary/10">
-          <div v-for="info in contactInfo" :key="info.label" class="space-y-4 group cursor-pointer">
-            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-accent group-hover:translate-x-2 transition-transform italic">{{ info.label }}</p>
-            <p class="text-2xl font-serif italic tracking-tight group-hover:text-white transition-colors">{{ info.value }}</p>
+  <section class="py-16 md:py-48 bg-background text-primary px-6 md:px-24">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center relative z-10">
+      <div class="lg:col-span-7 space-y-12 md:space-y-16 text-center lg:text-left">
+        <h2 class="text-6xl sm:text-8xl md:text-9xl lg:text-[10vw] font-serif italic leading-[0.8] tracking-tighter text-white uppercase">SAY <br/>HELLO</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 pt-8 md:pt-16 border-t border-primary/10">
+          <div v-for="info in contactInfo" :key="info.label" class="space-y-2 md:space-y-4 group cursor-pointer">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-accent group-hover:translate-x-2 transition-transform italic leading-none">{{ info.label }}</p>
+            <p class="text-xl md:text-2xl font-serif italic tracking-tight group-hover:text-white transition-colors leading-none">{{ info.value }}</p>
           </div>
         </div>
       </div>
-      <div class="lg:col-span-5 relative group">
-        <div class="aspect-square bg-background rounded-full flex flex-col items-center justify-center text-center p-16 text-primary shadow-[0_50px_150px_rgba(0,0,0,0.2)] border-8 border-white hover:scale-105 transition-transform duration-[2000ms] relative overflow-hidden">
+      <div class="lg:col-span-5 relative group max-w-sm mx-auto lg:max-w-none w-full">
+        <div class="aspect-square bg-background rounded-full flex flex-col items-center justify-center text-center p-8 md:p-16 text-primary border-4 md:border-8 border-white hover:scale-105 transition-transform duration-[2000ms] relative overflow-hidden">
           <ParallaxImage src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200" speed="0.1" />
-          <div class="absolute inset-0 bg-primary/40 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-center p-12">
-            <p class="text-xs font-black uppercase tracking-[1em] text-white mb-8 italic">The_Inquiry</p>
-            <p class="text-5xl font-serif italic text-white leading-none tracking-tighter mb-12">Begin <br/>Your <br/>Escape</p>
-            <div class="w-24 h-24 rounded-full border-4 border-white flex items-center justify-center group-hover:rotate-180 transition-transform duration-1000 text-white">
-              <ArrowRight :size="48" />
+          <div class="absolute inset-0 bg-primary/40 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-center p-8 md:p-12">
+            <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] md:tracking-[1em] text-white mb-4 md:mb-8 italic leading-none">The_Inquiry</p>
+            <p class="text-3xl md:text-5xl font-serif italic text-white leading-none tracking-tighter mb-8 md:mb-12">Begin <br/>Your <br/>Escape</p>
+            <div class="w-12 h-12 md:w-24 md:h-24 rounded-full border-2 md:border-4 border-white flex items-center justify-center group-hover:rotate-180 transition-transform duration-1000 text-white">
+              <ArrowRight :size="24" class="md:hidden" />
+              <ArrowRight :size="48" class="hidden md:block" />
             </div>
           </div>
         </div>

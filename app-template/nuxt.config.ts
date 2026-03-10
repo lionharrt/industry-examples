@@ -4,21 +4,19 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
 
   nitro: {
-    preset: "firebase",
-    firebase: {
-      gen: 2,
-    },
+    preset: "node-server",
   },
 
   app: {
     head: {
-      title: "[PROJECT_NAME]",
+      title: "Industry Examples",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "description", content: "[PROJECT_DESCRIPTION]" },
       ],
       link: [
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",

@@ -9,7 +9,7 @@
         </div>
       </div>
       
-      <div class="w-full md:w-1/2 p-10 md:p-12 lg:p-24 space-y-16 md:space-y-24 bg-white/50 backdrop-blur-sm">
+      <div class="w-full md:w-1/2 p-10 md:p-12 lg:p-24 space-y-16 md:space-y-24 bg-white/50 backdrop-blur-sm flex flex-col justify-center">
         <div v-for="(t, index) in testimonials" :key="index" class="space-y-4 md:space-y-6 testimonial-item opacity-0">
           <p class="text-lg md:text-xl font-light text-primary leading-relaxed">
             {{ t.quote }}

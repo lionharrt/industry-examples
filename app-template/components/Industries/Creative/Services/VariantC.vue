@@ -1,11 +1,11 @@
 <template>
-  <section class="py-48 bg-accent text-background overflow-hidden">
-    <div ref="scrollTrack" class="flex gap-24 whitespace-nowrap px-12 md:px-24">
-      <div v-for="service in [...services, ...services]" :key="service.title" class="flex items-center gap-12 group">
-        <h3 class="text-[12vw] font-black uppercase tracking-tighter group-hover:text-primary transition-colors cursor-default">
+  <section class="py-16 md:py-48 bg-accent text-background overflow-hidden">
+    <div ref="scrollTrack" class="flex gap-12 md:gap-24 whitespace-nowrap px-6 md:px-24">
+      <div v-for="service in [...services, ...services]" :key="service.title" class="flex items-center gap-6 md:gap-12 group">
+        <h3 class="text-5xl sm:text-7xl md:text-[10vw] font-black uppercase tracking-tighter group-hover:text-primary transition-colors cursor-default leading-none">
           {{ service.title }}
         </h3>
-        <div class="w-24 h-24 rounded-full border-[8px] border-background group-hover:scale-110 group-hover:bg-background transition-all duration-500"></div>
+        <div class="w-12 h-12 md:w-24 md:h-24 rounded-full border-4 md:border-[8px] border-background group-hover:scale-110 group-hover:bg-background transition-all duration-500"></div>
       </div>
     </div>
   </section>

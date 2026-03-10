@@ -8,7 +8,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "postbuild": "node -e \"const p=require('./.output/server/package.json');p.main='index.mjs';p.scripts={start:'node index.mjs'};require('fs').writeFileSync('./.output/server/package.json',JSON.stringify(p,null,2))\"",
+    "deploy": "npm run build && gcloud run deploy server --source .output/server --region us-central1 --project industry-examples --allow-unauthenticated && firebase deploy --only hosting"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.14.0",

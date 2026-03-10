@@ -6,8 +6,8 @@
              class="group py-10 md:py-12 flex items-center justify-between gap-6 md:gap-12 team-row opacity-0"
         >
           <div class="flex items-center gap-6 md:gap-12">
-            <div class="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all duration-500">
-              <img :src="member.image" :alt="member.name" class="w-full h-full object-cover">
+            <div class="w-24 h-24 md:w-28 md:h-28 rounded-[32px] overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all duration-500">
+              <img :src="member.image" :alt="member.name" class="w-full h-full object-cover object-top">
             </div>
             <div>
               <h3 class="text-2xl md:text-3xl font-light text-primary group-hover:italic transition-all leading-tight">{{ member.name }}</h3>
